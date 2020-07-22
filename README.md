@@ -44,7 +44,7 @@
 - belongs_to :brand
 - has_many :images
 
-## categorysテーブル
+## categoriesテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
