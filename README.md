@@ -15,8 +15,8 @@
 |phone_number|string||
 ### Association
 - has_many :posts dependent: :destroy
-- belongs_to :address dependent: :destroy
-- belongs_to :card dependent: :destroy
+- has_one :address dependent: :destroy
+- has_one :card dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Option|
@@ -26,7 +26,7 @@
 |city|string|null: false|
 |address|string|null: false|
 |apartment|string||
-|user|integer|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -37,7 +37,7 @@
 |deadline_month|integer|null: false|
 |deadline_year|integer|null: false|
 |security_code|integer|null: false|
-|user|integer|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -51,9 +51,9 @@
 |area|string|null: false|
 |day|string|null: false|
 |price|string|null: false|
-|user|integer|references|null: false, foreign_key: true|
-|category|integer|references|null: false, foreign_key: true|
-|brand|integer|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
+|brand|references|foreign_key: true|
 ### Association
 - belongs_to :user dependent: :destroy
 - belongs_to :category dependent: :destroy
@@ -71,7 +71,7 @@
 ## brandsテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string||
+|name|string|null: false|
 ### Association
 - has_many :posts
 
@@ -79,6 +79,6 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|post|integer|references|null: false, foreign_key: true|
+|post|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :post
