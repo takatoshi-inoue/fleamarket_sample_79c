@@ -81,4 +81,4 @@
 |name|string|null: false|
 |post|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
+- belongs_to :post 
