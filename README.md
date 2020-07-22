@@ -1,24 +1,68 @@
-# README
+# fleamarket_sample_79c DB設計
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|birth_day|integer|null: false|
+|birth_month|integer|null: false|
+|birth_year|integer|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|postal_code|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|apartment|string||
+|phone_number|string||
+|card_number|string|null: false|
+|deadline_month|integer|null: false|
+|deadline_year|integer|null: false|
+|security_code|integer|null: false|
+### Association
+- has_many :posts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## postsテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, add_index: true|
+|text|text|null: false|
+|condition|string|null: false|
+|burden|string|null: false|
+|area|string|null: false|
+|day|string|null: false|
+|price|string|null: false|
+|user|integer|references|null: false, foreign_key: true|
+|category|integer|references|null: false, foreign_key: true|
+|brand|integer|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand
+- has_many :images
 
-Things you may want to cover:
+## categorysテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|ancestry|string|null: false|
+### Association
+- has_many :posts
 
-* Ruby version
+## brandsテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string||
+### Association
+- has_many :posts
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## imagesテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|post|integer|references|null: false, foreign_key: true|
+### Association
+- belongs_to :post
