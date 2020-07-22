@@ -12,18 +12,34 @@
 |birth_year|integer|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
+|phone_number|string||
+### Association
+- has_many :posts dependent: :destroy
+- belongs_to :address dependent: :destroy
+- belongs_to :card dependent: :destroy
+
+## addressesテーブル
+|Column|Type|Option|
+|------|----|------|
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |apartment|string||
-|phone_number|string||
+|user|integer|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+
+## cardsテーブル
+|Column|Type|Option|
+|------|----|------|
 |card_number|string|null: false|
 |deadline_month|integer|null: false|
 |deadline_year|integer|null: false|
 |security_code|integer|null: false|
+|user|integer|references|null: false, foreign_key: true|
 ### Association
-- has_many :posts
+- belongs_to :user
 
 ## postsテーブル
 |Column|Type|Option|
@@ -39,10 +55,10 @@
 |category|integer|references|null: false, foreign_key: true|
 |brand|integer|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :category
-- belongs_to :brand
-- has_many :images
+- belongs_to :user dependent: :destroy
+- belongs_to :category dependent: :destroy
+- belongs_to :brand dependent: :destroy
+- has_many :images dependent: :destroy
 
 ## categoriesテーブル
 |Column|Type|Option|
