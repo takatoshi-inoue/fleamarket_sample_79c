@@ -84,3 +84,5 @@
 - belongs_to :post 
 
 test
+
+test
