@@ -83,6 +83,7 @@
 ### Association
 - belongs_to :post 
 
+
 bbbbbbbbbb
 
 suzuki
@@ -92,14 +93,12 @@ suzuki
 
 
 
-
-
-
-
-
-
-
-
 aaa
 
 bbb
+
+suzuki ren
+
+
+suzuki renaaa
+
