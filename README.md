@@ -84,7 +84,15 @@
 - belongs_to :post 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 bbbbbbbbbb
 =======
 suzuki
 >>>>>>> master
+=======
+
+bbbbbbbbbb
+
+suzuki
+
+>>>>>>> 3d2d465e0c309f01ed3177d5e4be000519be6071
