@@ -82,3 +82,5 @@
 |post|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :post 
+
+suzuki
