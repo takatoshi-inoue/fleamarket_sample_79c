@@ -83,4 +83,8 @@
 ### Association
 - belongs_to :post 
 
+
 bbbbbbbbbb
+
+suzuki
+
