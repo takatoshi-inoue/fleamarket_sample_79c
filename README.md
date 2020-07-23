@@ -83,4 +83,18 @@
 ### Association
 - belongs_to :post 
 
-suzuki
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+suzuki ren
