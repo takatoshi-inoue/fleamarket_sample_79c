@@ -83,4 +83,8 @@
 ### Association
 - belongs_to :post 
 
+<<<<<<< HEAD
 bbbbbbbbbb
+=======
+suzuki
+>>>>>>> master
