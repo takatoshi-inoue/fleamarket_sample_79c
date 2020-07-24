@@ -36,11 +36,14 @@
           }
 
           &__icon{
-            width: 36px;
-            border: 0;
-            cursor: pointer;
-            background-color: #3CCACE;
-            padding: 8px;
+
+            button{
+              background-color: #3CCACE;
+              border: 0;
+              width: 36px;
+              padding: 8px;
+              cursor: all-scroll;
+            }
           }
         }
       }
@@ -105,8 +108,9 @@
   padding-right: 10px;
 }
 .Search_img{
-  height: 10px;
-  width: 10px;
+  height: 100%;
+  width: 100%;
+  vertical-align: bottom;
 }
 
 .Main{
@@ -559,3 +563,4 @@
     width: 60%;
   }
 }
+
