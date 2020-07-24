@@ -1,2 +1,274 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+.Header
+  .Header__box
+    .Header__box__top
+      .Header__box__top__icon
+        = link_to image_tag("logo.png", class:"Header_img"), "/"
+      .Header__box__top__search
+        .Header__box__top__search__input
+          %input.SearchInput{:name => "key", :placeholder => "キーワードから探す"}/
+          .Header__box__top__search__input__icon
+            %button{:type => "submit"}
+              .searchBox__icon
+                = link_to image_tag("icon-search 1.png", class:"Search_img"), "/"
+                %input{:name => "authenticity_token", :type => "hidden"}
+
+    .Header__box__bottom
+      .Header__box__bottom__listLeft
+        .Header__box__bottom__listLeft__category
+          カテゴリー
+        .Header__box__bottom__listLeft__brand
+          ブランド
+      .Header__box__bottom__listRight
+        .Header__box__bottom__listRight__login
+          ログイン
+        .Header__box__bottom__listRight__new
+          新規会員登録
+
+.Main
+  .Main__visual
+    .Main__visual__content
+      .Main__visual__content__subtitle
+        人生を変えるフリマアプリ
+      .Main__visual__content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %BR フリマアプリです
+      .Main__visual__content__icon
+        .Main__visual__content__icon__aBtn
+          = link_to image_tag("apple.svg", class:"App_img"), "/"
+        .Main__visual__content__icon__gBtn
+          = link_to image_tag("google.svg", class:"Google_img"), "/"
+
+  .Main__introduction
+    .Main__introduction__subtitle
+      FURAIMAが選ばれる3つの理由
+    %ul.Main__introduction__lists
+      %li.Main__introduction__lists__list
+        .Main__introduction__lists__list__photo
+          = link_to image_tag("pict-reason-01.jpg", class:"Reason_img"), "/"
+          .Main__introduction__lists__list__photo__number
+            1
+        .Main__introduction__lists__list__text
+          %span.ao 3分 
+          ですぐに出品
+        .Main__introduction__lists__list__description
+          スマホで入力するだけで簡単に出品できる！
+      %li.Main__introduction__lists__list
+        .Main__introduction__lists__list__photo
+          = link_to image_tag("pict-reason-02.jpg", class:"Reason_img"), "/"
+          .Main__introduction__lists__list__photo__number
+            2
+        .Main__introduction__lists__list__text
+          %span.ao シンプル 
+          で使いやすい
+        .Main__introduction__lists__list__description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.Main__introduction__lists__list
+        .Main__introduction__lists__list__photo
+          = link_to image_tag("pict-reason-03.jpg", class:"Reason_img"), "/"
+          .Main__introduction__lists__list__photo__number
+            3
+        .Main__introduction__lists__list__text
+          手数料 
+          %span.ao 業界最安
+        .Main__introduction__lists__list__description
+          最大3%でお得に出品&購入！
+
+  .Main__dl
+    .Main__dl__box
+      .Main__dl__box__subtitle
+        会員数日本一位
+      .Main__dl__box__text
+        FURIMAは、フリマアプリで最も人気。
+        %BR 出品・購入回数も業界最多です！
+        ほしかったあの商品に出会えるかもしれません。
+      .Main__dl__box__icon
+        .Main__dl__box__icon__aBtn
+          = link_to image_tag("apple.svg", class:"App_img"), "/"
+        .Main__dl__box__icon__gBtn
+          = link_to image_tag("google.svg", class:"Google_img"), "/"
+  .Main__features
+    .Main__features__head
+      FURIMAの特徴
+    .Main__features__items
+      .Main__features__items__item
+        .Main__features__items__item__img
+          = link_to image_tag("icon-01.png", class:"Features_img"), "/"
+        .Main__features__items__item__subtitle
+          簡単に売り買いできる
+        .Main__features__items__item__detail
+          スマホひとつで、いつでもどこでも簡単
+          %BR に出品・購入が可能！
+      .Main__features__items__item
+        .Main__features__items__item__img
+          = link_to image_tag("icon-02.png", class:"Features_img"), "/"
+        .Main__features__items__item__subtitle
+          売上金は即日振込みに対応
+        .Main__features__items__item__detail
+          午前9時までに振込を依頼いただけれ
+          %BR ば、翌日に指定の口座に入金いたします!
+      .Main__features__items__item
+        .Main__features__items__item__img
+          = link_to image_tag("icon-03.png", class:"Features_img"), "/"
+        .Main__features__items__item__subtitle
+          様々な支払いに対応
+        .Main__features__items__item__detail
+          お支払いは、クレジットカードだけでな
+          %BR く、ポイントや売上金など多彩な方法があります。
+  .Main__pickupContainer
+    .Main__pickupContainer__head
+      ピックアップカテゴリー
+    .Main__pickupContainer__productbox
+      .Main__pickupContainer__productbox__head
+        新規投稿商品
+      .Main__pickupContainer__productbox__lists
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 1
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 2
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 3
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 4
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+  .Main__pickupContainer
+    .Main__pickupContainer__head
+      ピックアップブランド
+    .Main__pickupContainer__productbox
+      .Main__pickupContainer__productbox__head
+        アーカイバ
+      .Main__pickupContainer__productbox__lists
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 1
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 2
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 3
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+        .Main__pickupContainer__productbox__lists__list
+          .Main__pickupContainer__productbox__lists__list__img
+            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+          .Main__pickupContainer__productbox__lists__list__body
+            .Main__pickupContainer__productbox__lists__list__body__name
+              product 4
+            .Main__pickupContainer__productbox__lists__list__body__details
+              .Main__pickupContainer__productbox__lists__list__body__details__money
+                1000円
+              .Main__pickupContainer__productbox__lists__list__body__details__tax
+                (税金)
+
+.AppBannaer
+  .AppBannaer__inner
+    .AppBannaer__inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .AppBannaer__inner__text
+      今すぐ無料ダウンロード！
+    .AppBannaer__inner__icon
+      .AppBannaer__inner__icon__aBtn
+        = link_to image_tag("apple.svg", class:"App_img"), "/"
+      .AppBannaer__inner__icon__gBtn
+        = link_to image_tag("google.svg", class:"Google_img"), "/"
+
+.Footer
+  %ul.Footer__contents
+    %li.Footer__contents__content
+      %h.Footer__contents__content__head 
+        FURIMAについて
+      %ul.Footer__contents__content__lists
+        %li 
+          %a.Footer__contents__content__lists__a 会社概要（運営会社）
+        %li
+          %a.Footer__contents__content__lists__a プライバシーポリシー
+        %li 
+          %a.Footer__contents__content__lists__a FURIMA利用規約
+        %li 
+          %a.Footer__contents__content__lists__a ポイントに関する特約
+    %li.Footer__contents__content
+      %h.Footer__contents__content__head
+        FURIMAを見る
+      %ul.Footer__contents__content__lists
+        %li 
+          %a.Footer__contents__content__lists__a カテゴリー一覧
+        %li
+          %a.Footer__contents__content__lists__a ブランド一覧
+    %li.Footer__contents__content
+      %h.Footer__contents__content__head
+        ヘルプ＆ガイド
+      %ul.Footer__contents__content__lists
+        %li 
+          %a.Footer__contents__content__lists__a FURIMAガイド
+        %li
+          %a.Footer__contents__content__lists__a FURIMAロゴ利用ガイドライン
+        %li
+          %a.Footer__contents__content__lists__a お知らせ
+  .Footer__logo
+    = link_to image_tag("Footer.png", class:"Footer_img"), "/"
+    %p.Footer__logo__end
+      © FURIMA
+
+.PurchaseBtn
+  %span.PurchaseBtn__text
+    出品する
+  = link_to image_tag("Camera.png", class:"Camera_img"), "/"
+
+
