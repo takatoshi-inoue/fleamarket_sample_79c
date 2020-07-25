@@ -1,14 +1,11 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-* {
-  box-sizing: border-box;
-}
-
-.wrapper {
-  height: 100vh;
-  width: 100vw;
-}
+@import "modules/index";
+@import "modules/Header";
+@import "modules/Footer";
 @import "modules/SubHeader";
 @import "modules/new";
 @import "modules/SubFooter";
+
+
