@@ -1,4 +1,6 @@
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 * {
   box-sizing: border-box;
 }
@@ -8,3 +10,5 @@
   width: 100vw;
 }
 @import "modules/SubHeader";
+@import "modules/new";
+@import "modules/SubFooter";

@@ -1,8 +1,5 @@
 .SubWrapper
-  .SubHeader
-    = link_to image_tag("logo.png", class:"SubHeader__image", size: "185x50",), "/"
-  
-  
+  = render 'SubHeader'
   .Post-Main
     .Post-Main__images
       .Post-Main__images__messages
@@ -12,7 +9,7 @@
       .Post-Main__images__image
         .Post-Main__images__image__icon
           = image_tag "icon_camera.png"
-          %input{type:"file"}
+          %input{type:"file", class:"Post-Main__images__image__icon__file"}
         .Post-Main__images__image__text
           %p.p2 ドラッグアンドドロップ
           %p.p2 またはクリックしてファイルをアップロード
@@ -37,10 +34,20 @@
           %span 必須
         %select{class:"Post-Main__post-show__box1__select"}
           %option{value: "0"}  選択してください
-          %option{value: "1"}  11
-          %option{value: "2"}  --
-          %option{value: "3"}  --
-          %option{value: "4"}  --
+          %option{value: "1"}  レディース
+          %option{value: "2"}  メンズ
+          %option{value: "3"}  ベビー・キッズ
+          %option{value: "4"}  インテリア・住まい・小物
+          %option{value: "5"}  本・音楽・ゲーム
+          %option{value: "6"}  おもちゃ・ホビー・グッズ
+          %option{value: "7"}  コスメ・香水・美容
+          %option{value: "8"}  家電・スマホ・カメラ
+          %option{value: "9"}  スポーツ・レジャー
+          %option{value: "10"}  ハンドメイド
+          %option{value: "11"}  チケット
+          %option{value: "12"}  自動車・オートバイ
+          %option{value: "13"}  その他
+        = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__post-show__box2
         .Post-Main__post-show__box2__text
           %label ブランド
@@ -52,10 +59,13 @@
           %span 必須
         %select{class:"Post-Main__post-show__box3__select"}
           %option{value: "0"}  選択してください
-          %option{value: "1"}  --
-          %option{value: "2"}  --
-          %option{value: "3"}  --
-          %option{value: "4"}  --
+          %option{value: "1"}  新品、未使用
+          %option{value: "2"}  未使用に近い
+          %option{value: "3"}  目立った傷や汚れなし
+          %option{value: "4"}  やや傷や汚れあり
+          %option{value: "5"}  傷や汚れあり
+          %option{value: "6"}  全体的に状態が悪い
+        = icon('fas', 'chevron-down', class: "items-btn")
     .Post-Main__delivery
       %p.p3 配送について
       .Post-Main__delivery__box1
@@ -64,10 +74,9 @@
           %span 必須
         %select{class:"Post-Main__delivery__box1__select"}
           %option{value: "0"}  選択してください
-          %option{value: "1"}  --
-          %option{value: "2"}  --
-          %option{value: "3"}  --
-          %option{value: "4"}  --
+          %option{value: "1"}  送料込み(出品者負担)
+          %option{value: "2"}  着払い(購入者負担)
+        = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery__box2
         .Post-Main__delivery__box2__text
           %label 発送元の地域
@@ -78,16 +87,17 @@
           %option{value: "2"}  --
           %option{value: "3"}  --
           %option{value: "4"}  --
+        = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery__box3
         .Post-Main__delivery__box3__text
           %label 発送までの日数
           %span 必須
         %select{class:"Post-Main__delivery__box3__select"}
           %option{value: "0"}  選択してください
-          %option{value: "1"}  --
-          %option{value: "2"}  --
-          %option{value: "3"}  --
-          %option{value: "4"}  --
+          %option{value: "1"}  1~2日で発送
+          %option{value: "2"}  2~3日で発送
+          %option{value: "3"}  4~7日で発送
+        = icon('fas', 'chevron-down', class: "items-btn")
     .Post-Main__price
       %p.p3 価格（¥300~9,999,999）
       .Post-Main__price__box1
@@ -107,16 +117,4 @@
       = link_to("出品する", root_path, {class: "Post-Main__btns__btn1"})
       = link_to("下書きに保存", root_path, {class: "Post-Main__btns__btn2"})
       = link_to("もどる", root_path, {class: "Post-Main__btns__btn3"})
-
-
-
-
-
-
-
-
-
-
-  .SubFooter
-    = link_to image_tag("logo-white.png", class:"SubHeader__image", size: "185x50",), "/"
-    %p © FURIMA
+  = render 'SubFooter'
