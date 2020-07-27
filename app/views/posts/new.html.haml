@@ -3,8 +3,8 @@
   .Post-Main
     .Post-Main__images
       .Post-Main__images__messages
-        %label 出品画像
-        %span 必須
+        %label.labelmessage 出品画像
+        %span.spanmessage 必須
       %p.p1 最大10枚までアップロードできます
       .Post-Main__images__image
         .Post-Main__images__image__icon
@@ -16,13 +16,13 @@
     .Post-Main__name-text
       .Post-Main__name-text__box1
         .Post-Main__name-text__box1__text
-          %label 商品名
-          %span 必須
+          %label.labelmessage 商品名
+          %span.spanmessage 必須
         %input{class:"Post-Main__name-text__box1__form", placeholder:"40文字まで"}
       .Post-Main__name-text__box2
         .Post-Main__name-text__box2__text
-          %label 商品の説明
-          %span 必須
+          %label.labelmessage 商品の説明
+          %span.spanmessage 必須
         %textarea{class:"Post-Main__name-text__box2__form", placeholder:"商品の説明(必須1,000文字以内)"}
         .Post-Main__name-text__box2__number
           0/1000
@@ -30,8 +30,8 @@
       %p.p3 商品の詳細
       .Post-Main__post-show__box1
         .Post-Main__post-show__box1__text
-          %label カテゴリー
-          %span 必須
+          %label.labelmessage カテゴリー
+          %span.spanmessage 必須
         %select{class:"Post-Main__post-show__box1__select"}
           %option{value: "0"}  選択してください
           %option{value: "1"}  レディース
@@ -50,13 +50,13 @@
         = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__post-show__box2
         .Post-Main__post-show__box2__text
-          %label ブランド
+          %label.labelmessage ブランド
           %span.sub 任意
         %input{class:"Post-Main__post-show__box2__form", placeholder:"例) シャネル"}
       .Post-Main__post-show__box3
         .Post-Main__post-show__box3__text
-          %label 商品の状態
-          %span 必須
+          %label.labelmessage 商品の状態
+          %span.spanmessage 必須
         %select{class:"Post-Main__post-show__box3__select"}
           %option{value: "0"}  選択してください
           %option{value: "1"}  新品、未使用
@@ -70,8 +70,8 @@
       %p.p3 配送について
       .Post-Main__delivery__box1
         .Post-Main__delivery__box1__text
-          %label 配送料の負担
-          %span 必須
+          %label.labelmessage 配送料の負担
+          %span.spanmessage 必須
         %select{class:"Post-Main__delivery__box1__select"}
           %option{value: "0"}  選択してください
           %option{value: "1"}  送料込み(出品者負担)
@@ -79,8 +79,8 @@
         = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery__box2
         .Post-Main__delivery__box2__text
-          %label 発送元の地域
-          %span 必須
+          %label.labelmessage 発送元の地域
+          %span.spanmessage 必須
         %select{class:"Post-Main__delivery__box2__select"}
           %option{value: "0"}  選択してください
           %option{value: "1"}  --
@@ -90,8 +90,8 @@
         = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery__box3
         .Post-Main__delivery__box3__text
-          %label 発送までの日数
-          %span 必須
+          %label.labelmessage 発送までの日数
+          %span.spanmessage 必須
         %select{class:"Post-Main__delivery__box3__select"}
           %option{value: "0"}  選択してください
           %option{value: "1"}  1~2日で発送
@@ -102,8 +102,8 @@
       %p.p3 価格（¥300~9,999,999）
       .Post-Main__price__box1
         .Post-Main__price__box1__text
-          %label 販売価格
-          %span 必須
+          %label.labelmessage 販売価格
+          %span.spanmessage 必須
         .Post-Main__price__box1__forms
           %span.money ¥
           %input{class:"Post-Main__price__box1__forms__form", placeholder:"0"}
