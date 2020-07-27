@@ -1,0 +1,60 @@
+%h2 会員情報入力
+= form_for(@user, url: user_registration_path) do |f|
+  = render "devise/shared/error_messages", resource: @user
+  .field
+    = f.label :ニックネーム, class:"field__name"
+    %span 必須
+    %br/
+    = f.text_field :nickname, autofocus: true, class:"field__box"
+  .field
+    = f.label :メールアドレス, class:"field__name"
+    %span 必須
+    %br/
+    = f.email_field :email,  autocomplete: "email", class:"field__box"
+  .field
+    = f.label :パスワード, class:"field__name"
+    %span 必須
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} 文字以上)
+    %br/
+    = f.password_field :password, autocomplete: "new-password", class:"field__box"
+  .field
+    = f.label :パスワード（確認用）, class:"field__name"
+    %span 必須
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password", class:"field__box"
+  .field
+    = f.label :お名前（全角）, class:"field__name"
+    %span 必須
+    .field-fullname
+      %br/
+      = f.text_field :first_name, class:"field__box"
+      %br/
+      = f.text_field :last_name, class:"field__box"
+  .field
+    = f.label :お名前カナ（全角）, class:"field__name"
+    %span 必須
+    .field-fullname
+      %br/
+      = f.text_field :first_name_kana, class:"field__box"
+      %br/
+      = f.text_field :last_name_kana, class:"field__box"
+  .field
+    = f.label :生年月日, class:"field__name"
+    %span 必須
+    .field-birthday
+      %br/
+      = f.text_field :birth_year, class:"field__box"
+      %br/
+      = f.text_field :birth_month, class:"field__box"
+      %br/
+      = f.text_field :birth_day, class:"field__box"
+  .field
+    = f.label :電話番号, class:"field__name"
+    %span 任意
+    %br/
+    = f.password_field :phone_number, class:"field__box"                   
+  .actions
+    = f.submit "次へ進む", class:"actions__btn"
+/= render "devise/shared/links"
