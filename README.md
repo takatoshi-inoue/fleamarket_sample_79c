@@ -33,10 +33,7 @@
 ## cardsテーブル
 |Column|Type|Option|
 |------|----|------|
-|card_number|string|null: false|
-|deadline_month|integer|null: false|
-|deadline_year|integer|null: false|
-|security_code|integer|null: false|
+|card_token|string|null: false|
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -53,11 +50,10 @@
 |price|string|null: false|
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
+|brand|string|null: false|
 ### Association
 - belongs_to :user dependent: :destroy
 - belongs_to :category dependent: :destroy
-- belongs_to :brand dependent: :destroy
 - has_many :images dependent: :destroy
 
 ## categoriesテーブル
@@ -65,13 +61,6 @@
 |------|----|------|
 |name|string|null: false|
 |ancestry|string|null: false|
-### Association
-- has_many :posts
-
-## brandsテーブル
-|Column|Type|Option|
-|------|----|------|
-|name|string|null: false|
 ### Association
 - has_many :posts
 
