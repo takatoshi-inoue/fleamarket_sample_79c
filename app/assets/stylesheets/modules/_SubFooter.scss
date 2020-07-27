@@ -11,10 +11,10 @@
   }
   img {
     filter: invert(50%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+    width: 185px;
+    height: 50px;
   }
   &__image {
-    max-width: 100%;
-    max-height: 100%;
     margin-top: 30px;
   }
 }
