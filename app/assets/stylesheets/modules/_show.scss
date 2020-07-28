@@ -8,11 +8,35 @@
     
     &__Ul {
       border: 0;
+      position: relative;
       
       &__Il {
         font-weight: 600;
         display: flex;
         border: 1px solid #f5f5f5;
+      
+        &__linkTo {
+          display: block;
+          width: 282px;
+          height: 48px;
+          position: absolute;
+          padding: 10px;
+          border: 1px solid #f5f5f5;
+          list-style: none;
+          
+          &__linkBtn {
+            text-decoration: none;
+            display: block;
+            width: 282px;
+            height: 48px;
+            color: #333;
+          }
+
+
+          &__LogOut {
+            
+          }
+        }
         
         &__Active { 
           position: relative;
@@ -28,6 +52,43 @@
           justify-content: space-between;
           text-decoration: none;
         }
+
+      &__Relative {
+        position: relative;
+        &__Absolute1 {
+          position: absolute;
+          bottom: 305px;
+          left: 290px;
+        }
+        &__Absolute2 {
+          position: absolute;
+          bottom: 355px;
+          left: 290px;
+        }
+        &__Absolute3 {
+          position: absolute;
+          bottom: 255px;
+          left: 290px;
+        }
+        &__Absolute4 {
+          position: absolute;
+          bottom: 205px;
+          left: 290px;
+        }
+        &__Absolute5 {
+          position: absolute;
+          bottom: 91px;
+          left: 290px;
+        }
+        &__Absolute6 {
+          position: absolute;
+          bottom: 40px;
+          left: 290px;
+        }
+      }
+
+
+
       }
       &__Setting {
         margin-top: 40px;
@@ -73,7 +134,7 @@
         font-size: 0;
         display: flex;
         
-
+        
         &__Evaluation {
           display: inline-block;
           font-size: 50px;
@@ -95,7 +156,6 @@
         flex-wrap:wrap;
         align-content: stretch;
 
-        
 
         &__list {
           

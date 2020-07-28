@@ -21,7 +21,8 @@
       .Header__box__bottom__listRight
         - if user_signed_in?
           .Header__box__bottom__listRight__login
-            = link_to "マイページ", destroy_user_session_path, method: :delete
+            
+            = link_to "マイページ2", "/users/#{current_user.id}"
         - else
           .Header__box__bottom__listRight__login
             = link_to "ログイン", new_user_session_path
