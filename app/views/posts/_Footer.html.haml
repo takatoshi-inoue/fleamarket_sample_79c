@@ -6,9 +6,11 @@
       今すぐ無料ダウンロード！
     .AppBannaer__inner__icon
       .AppBannaer__inner__icon__aBtn
-        = link_to image_tag("apple.svg", class:"App_img"), "/"
+        = link_to "/" do
+          = image_tag asset_path("apple.svg", class:"App_img")
       .AppBannaer__inner__icon__gBtn
-        = link_to image_tag("google.svg", class:"Google_img"), "/"
+        = link_to "/" do
+          = image_tag asset_path("google.svg", class:"Google_img")
 
 .Footer
   %ul.Footer__contents
@@ -43,6 +45,7 @@
         %li
           %a.Footer__contents__content__lists__a お知らせ
   .Footer__logo
-    = link_to image_tag("Footer.png", class:"Footer_img"), "/"
+    = link_to "/" do
+      = image_tag asset_path("Footer.png", class:"Footer_img")
     %p.Footer__logo__end
       © FURIMA

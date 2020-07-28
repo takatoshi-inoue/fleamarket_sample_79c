@@ -4,15 +4,17 @@
   .Main__visual
     .Main__visual__content
       .Main__visual__content__subtitle
-        人生を変えるフリマアプリ
+        人生を変えるフリマアプリ    
       .Main__visual__content__text
         FURIMAはだれでもかんたんに出品・購入できる
         %BR フリマアプリです
       .Main__visual__content__icon
         .Main__visual__content__icon__aBtn
-          = link_to image_tag("apple.svg", class:"App_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("apple.svg", class:"App_img")
         .Main__visual__content__icon__gBtn
-          = link_to image_tag("google.svg", class:"Google_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("google.svg", class:"Google_img")
 
   .Main__introduction
     .Main__introduction__subtitle
@@ -20,7 +22,8 @@
     %ul.Main__introduction__lists
       %li.Main__introduction__lists__list
         .Main__introduction__lists__list__photo
-          = link_to image_tag("pict-reason-01.jpg", class:"Reason_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("pict-reason-01.jpg", class:"Reason_img")
           .Main__introduction__lists__list__photo__number
             1
         .Main__introduction__lists__list__text
@@ -30,7 +33,8 @@
           スマホで入力するだけで簡単に出品できる！
       %li.Main__introduction__lists__list
         .Main__introduction__lists__list__photo
-          = link_to image_tag("pict-reason-02.jpg", class:"Reason_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("pict-reason-02.jpg", class:"Reason_img")
           .Main__introduction__lists__list__photo__number
             2
         .Main__introduction__lists__list__text
@@ -40,7 +44,8 @@
           めんどくさい入力は必要なく、検索も購入もスムーズ！
       %li.Main__introduction__lists__list
         .Main__introduction__lists__list__photo
-          = link_to image_tag("pict-reason-03.jpg", class:"Reason_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("pict-reason-03.jpg", class:"Reason_img")
           .Main__introduction__lists__list__photo__number
             3
         .Main__introduction__lists__list__text
@@ -59,16 +64,19 @@
         ほしかったあの商品に出会えるかもしれません。
       .Main__dl__box__icon
         .Main__dl__box__icon__aBtn
-          = link_to image_tag("apple.svg", class:"App_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("apple.svg", class:"App_img")
         .Main__dl__box__icon__gBtn
-          = link_to image_tag("google.svg", class:"Google_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("google.svg", class:"Google_img")
   .Main__features
     .Main__features__head
       FURIMAの特徴
     .Main__features__items
       .Main__features__items__item
         .Main__features__items__item__img
-          = link_to image_tag("icon-01.png", class:"Features_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("icon-01.png", class:"Features_img")
         .Main__features__items__item__subtitle
           簡単に売り買いできる
         .Main__features__items__item__detail
@@ -76,7 +84,8 @@
           %BR に出品・購入が可能！
       .Main__features__items__item
         .Main__features__items__item__img
-          = link_to image_tag("icon-02.png", class:"Features_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("icon-02.png", class:"Features_img")
         .Main__features__items__item__subtitle
           売上金は即日振込みに対応
         .Main__features__items__item__detail
@@ -84,7 +93,8 @@
           %BR ば、翌日に指定の口座に入金いたします!
       .Main__features__items__item
         .Main__features__items__item__img
-          = link_to image_tag("icon-03.png", class:"Features_img"), "/"
+          = link_to "/" do
+            = image_tag asset_path("icon-03.png", class:"Features_img")
         .Main__features__items__item__subtitle
           様々な支払いに対応
         .Main__features__items__item__detail
@@ -99,7 +109,8 @@
       .Main__pickupContainer__productbox__lists
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Product.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 1
@@ -110,7 +121,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Product.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 2
@@ -121,7 +133,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Product.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 3
@@ -132,7 +145,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Product.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Product.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 4
@@ -150,7 +164,8 @@
       .Main__pickupContainer__productbox__lists
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Brand.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 1
@@ -161,7 +176,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = link_to image_tag asset_path("Brand.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 2
@@ -172,7 +188,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = link_to image_tag asset_path("Brand.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 3
@@ -183,7 +200,8 @@
                 (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Brand.jpeg", class:"Products_img"), "/"
+            = link_to "/" do
+              = image_tag asset_path("Brand.jpeg", class:"Products_img")
           .Main__pickupContainer__productbox__lists__list__body
             .Main__pickupContainer__productbox__lists__list__body__name
               product 4
@@ -200,4 +218,5 @@
 .PurchaseBtn
   %span.PurchaseBtn__text
     出品する
-  = link_to image_tag("Camera.png", class:"Camera_img"), new_post_path
+  = link_to new_post_path do
+    = image_tag asset_path("Camera.png", class:"Camera_img")

@@ -1,3 +1,5 @@
 .SubFooter
-    = link_to image_tag("logo-white.png", class:"SubHeader__image", size: "185x50",), "/"
-    %p © FURIMA
+  = link_to "/" do
+    .SubFooter__image
+      = image_tag asset_path("logo.png",  size: "185x50")
+  %p © FURIMA
