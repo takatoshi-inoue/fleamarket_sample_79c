@@ -1,0 +1,171 @@
+.MyBox{
+  margin: 40px auto 0;
+  width: 1020px;
+  height: 1342px;
+  display: flex;
+  &__side {
+    list-style: none;
+    
+    &__Ul {
+      border: 0;
+      position: relative;
+      
+      &__Il {
+        font-weight: 600;
+        display: flex;
+        border: 1px solid #f5f5f5;
+      
+        &__linkTo {
+          display: block;
+          width: 282px;
+          height: 48px;
+          position: absolute;
+          padding: 10px;
+          border: 1px solid #f5f5f5;
+          list-style: none;
+          
+          &__linkBtn {
+            text-decoration: none;
+            display: block;
+            width: 282px;
+            height: 48px;
+            color: #333;
+          }
+
+
+          &__LogOut {
+            
+          }
+        }
+        
+        &__Active { 
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background-color: #fff;
+          font-size: 14px;
+          color: #333;
+          width: 280px;
+          height: 48px;
+          display: flex;
+          justify-content: space-between;
+          text-decoration: none;
+        }
+
+      &__Relative {
+        position: relative;
+        &__Absolute1 {
+          position: absolute;
+          bottom: 305px;
+          left: 290px;
+        }
+        &__Absolute2 {
+          position: absolute;
+          bottom: 355px;
+          left: 290px;
+        }
+        &__Absolute3 {
+          position: absolute;
+          bottom: 255px;
+          left: 290px;
+        }
+        &__Absolute4 {
+          position: absolute;
+          bottom: 205px;
+          left: 290px;
+        }
+        &__Absolute5 {
+          position: absolute;
+          bottom: 91px;
+          left: 290px;
+        }
+        &__Absolute6 {
+          position: absolute;
+          bottom: 40px;
+          left: 290px;
+        }
+      }
+
+
+
+      }
+      &__Setting {
+        margin-top: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+  &__BigContainer {
+    width: 700px;
+    height: 1027;
+    padding: 20px;
+    background: url(/jp/assets/img/mypage/user-bg.jpg?82578048);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+    &__MyMainBox {
+      width: 700px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      &__MyContainer {
+        
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+
+        &__imgIcon {
+          vertical-align: middle;
+        }
+      }
+      &__Profile {
+        margin: 8px 0 0;
+        font-size: 14px;
+        
+      }
+      &__CountBox {
+        margin: 8px 0 0;
+        font-size: 0;
+        display: flex;
+        
+        
+        &__Evaluation {
+          display: inline-block;
+          font-size: 50px;
+
+        &__sell {
+          display: inline-block;
+          font-size: 14px;
+          }
+        }
+      }
+    }
+    &__PostBox {
+      width: 780px;
+      &__PostBoxCenter {
+        text-align: center;
+      }
+      &__lists {
+        display: flex;
+        flex-wrap:wrap;
+        align-content: stretch;
+
+
+        &__list {
+          
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+        }
+      }
+    }
+  } 
+
+}
