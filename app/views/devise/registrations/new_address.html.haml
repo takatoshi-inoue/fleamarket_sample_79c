@@ -1,26 +1,42 @@
-%h2 住所情報登録
-= form_for @address do |f|
-  = render "devise/shared/error_messages", resource: @address
-  .field
-    = f.label :郵便番号
-    %br/
-    = f.text_field :postal_code
-  .field
-    = f.label :都道府県
-    %br/
-    = f.text_field :prefectures
-  .field
-    = f.label :市区町村
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :番地
-    %br/
-    = f.text_field :address
-  .field
-    = f.label :マンション名、ビル名、部屋番号
-    %br/
-    = f.text_field :apartment
-  .actions
-    = f.submit "登録"
-= render "devise/shared/links"
+.SubWrapper
+  = render partial: "posts/SubHeader"
+  .Main-resistrations
+    .Main-resistrations__title
+      %h2 住所情報登録
+    .Main-resistrations__contents
+      .Main-resistrations__contents__list  
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .field
+            = f.label :郵便番号, class:"field__name"
+            %span.Required 必須
+            %br/
+            = f.text_field :postal_code, class:"field__box"
+          .field
+            = f.label :都道府県,  class:"field__name"
+            %span.Required 必須
+            %br/
+            = f.select :prefectures, ["--",
+              "北海道",
+              "青森県",
+              ], {},{class:"field__box"}
+          .field
+            = f.label :市区町村, class:"field__name"
+            %span.Required 必須
+            %br/
+            = f.text_field :city, class:"field__box"
+          .field
+            = f.label :番地, class:"field__name"
+            %span.Required 必須
+            %br/
+            = f.text_field :address, class:"field__box"
+          .field
+            = f.label :マンション名、ビル名、部屋番号, class:"field__name"
+            %span.Required 必須
+            %br/
+            = f.text_field :apartment, class:"field__box"
+          .actions
+            = f.submit "登録", class:"actions__btn"
+        /= render "devise/shared/links"
+  = render partial: "posts/SubFooter"
+
