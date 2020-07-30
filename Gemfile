@@ -73,3 +73,6 @@ gem 'devise'
 gem 'rspec-rails', '~> 4.0.0.beta2'
 
 gem 'payjp'
+gem 'dotenv-rails'
+
+gem "jquery-rails"
