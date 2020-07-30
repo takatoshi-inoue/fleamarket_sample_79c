@@ -35,6 +35,7 @@
 |------|----|------|
 |card_token|string|null: false|
 |user|references|null: false, foreign_key: true|
+|card_id|string|null: false|
 ### Association
 - belongs_to :user
 
