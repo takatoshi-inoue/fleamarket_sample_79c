@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'buyers/index'
+  get 'buyers/done'
   get 'card/new'
   get 'card/show'
   devise_for :users, controllers: {
@@ -12,6 +14,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :posts, only: [:new,:show]
+    resources :buyers, only: [:index] do
+      collection do
+        get 'done', to: 'buyers#done'
+        post 'pay', to: 'buyers#pay'
+      end
+    end
+
   resources :users, only: [:show]
 
   resources :cards, only: [:new, :show, :destroy] do
