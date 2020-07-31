@@ -21,4 +21,5 @@ class User < ApplicationRecord
 
   has_one :address, dependent: :destroy
   has_one :card, dependent: :destroy
+  has_many :posts, dependent: :destroy
 end
