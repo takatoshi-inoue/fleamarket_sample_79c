@@ -98,16 +98,17 @@
         新規投稿商品
       .Main__pickupContainer__productbox__lists
         .Main__pickupContainer__productbox__lists__list
-          .Main__pickupContainer__productbox__lists__list__img
-            = link_to image_tag("Product.jpg", class:"Products_img"),"/"
-          .Main__pickupContainer__productbox__lists__list__body
-            .Main__pickupContainer__productbox__lists__list__body__name
-              product 1
-            .Main__pickupContainer__productbox__lists__list__body__details
-              .Main__pickupContainer__productbox__lists__list__body__details__money
-                1000円
-              .Main__pickupContainer__productbox__lists__list__body__details__tax
-                (税金)
+          = link_to "/posts/:id", class:"Main__pickupContainer__productbox__lists__list__url" do
+            .Main__pickupContainer__productbox__lists__list__img
+              = image_tag("Product.jpg", class:"Products_img")
+            .Main__pickupContainer__productbox__lists__list__body
+              .Main__pickupContainer__productbox__lists__list__body__name
+                product 1
+              .Main__pickupContainer__productbox__lists__list__body__details
+                .Main__pickupContainer__productbox__lists__list__body__details__money
+                  1000円
+                .Main__pickupContainer__productbox__lists__list__body__details__tax
+                  (税金)
         .Main__pickupContainer__productbox__lists__list
           .Main__pickupContainer__productbox__lists__list__img
             = link_to image_tag("Product.jpg", class:"Products_img"),"/"

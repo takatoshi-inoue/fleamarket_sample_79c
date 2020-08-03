@@ -292,6 +292,10 @@
           display: inline-block;
           float: left;
 
+          &__url {
+            text-decoration: none;
+          }
+
           &__img{
             width: 220px;
             height: 150px;
