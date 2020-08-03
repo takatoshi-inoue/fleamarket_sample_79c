@@ -1,0 +1,109 @@
+.Required {
+  background-color: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  display: inline-block;
+  float: left;
+}
+.Any {
+  background-color: gray;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  display: inline-block;
+  float: left;
+}
+.Days {
+  padding-top: 15px;
+  margin: 0 2px;
+  font-size: 14px;
+}
+
+.select-year {
+  width: 140%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.Main-resistrations {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  &__title h2 {
+    font-size: 22px;
+    padding: 32px;
+    font-weight: 600;
+  }
+  &__contents {
+    border-top: 1px solid #f5f5f5;
+    padding: 24px 16px 40px;
+    &__list {
+    max-width: 343px;
+    margin: 0 auto;
+    }
+  }
+  .field {
+    &__name {
+      font-weight: 600;
+      display: inline-block;
+      align-items: center;
+      justify-content: stretch;
+      float: left;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    &__box {
+      width: 100%;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .field-fullname {
+      display: flex;
+      float: left;
+      align-items: center;
+      .furikana {
+        margin-right: 7px;
+      }
+    }
+    .field-birthday{
+      display: flex;
+      float: left;
+    }
+  }
+  .actions__btn {
+    width: 100%;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background:#ea352d;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+}
+
