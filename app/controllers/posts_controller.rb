@@ -22,6 +22,15 @@ class PostsController < ApplicationController
     @user = @post.user
     @images = @post.images
   end
+
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      redirect_to root_path
+    else
+      render :show
+    end  
+  end
   
   private
   
