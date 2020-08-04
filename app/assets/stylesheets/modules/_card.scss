@@ -1,0 +1,34 @@
+.CardsRegister {
+  width: 700px;
+  height: 562px;
+  
+  margin: 0 auto;
+  
+  &__CardsBox {
+    font-size: 24px;
+    width: 700px;
+    height: 50px;
+    
+    &__FormTag {
+      
+      &__NumberBox {
+        display: flex;
+        &__NumberBox1 {
+
+        }
+        &__NumberBox2 {
+          
+        }
+      }
+      &__TextBox {
+
+        &__KindOf {
+          display: flex;
+          &__KindOfLi {
+
+          }
+        }
+      }
+    }
+  }
+}
