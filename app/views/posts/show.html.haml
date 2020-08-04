@@ -31,11 +31,11 @@
           .Show-Main__box__right__content__itemBox__body        
             %ul.Show-Main__box__right__content__itemBox__body__lists        
               %li.Show-Main__box__right__content__itemBox__body__lists__image 
-                = image_tag @images[0].name,class:"Main_img"                 
+                = image_tag @images[0].name.url,class:"Main_img"                 
                 %ul.Show-Main__box__right__content__itemBox__body__lists__list
                   - @images.each do |images|
                     %li.Show-Main__box__right__content__itemBox__body__lists__list__img
-                      = image_tag images.name,class:"Sub_img"
+                      = image_tag images.name.url,class:"Sub_img"
                   -# = image_tag("Product.jpg", class:"Sub_img")
                   -# %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                   -#   = image_tag("Product.jpg", class:"Sub_img")
