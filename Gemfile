@@ -73,4 +73,10 @@ gem 'devise'
 gem 'rspec-rails', '~> 4.0.0.beta2'
 
 gem 'carrierwave'
+
 gem 'mini_magick'
+
+gem 'jquery-rails'
+
+gem 'active_hash'
+

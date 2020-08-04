@@ -5,18 +5,28 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-  end
-
-  def show
-
-    @post = Post.find(params[:id])
-    @user = @post.user
-    @images = @post.images
+    @post.images.new
   end
 
   def create
     @post = Post.new(post_params)
+    if @post.save!
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @user = @post.user
+    @images = @post.images
+  end
+  
+  private
+  
+  def post_params
+    params.require(:post).permit(:name ,:text, :condition, :burden, :area, :day, :price, :brand, images_attributes: [:name]).merge(user_id: current_user.id)
+  end
 end
 
