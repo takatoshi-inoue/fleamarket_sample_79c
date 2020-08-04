@@ -1,11 +1,5 @@
 class Post < ApplicationRecord
-  validates :name, presence: true
-  validates :text, presence: true
-  validates :condition, presence: true
-  validates :burden, presence: true
-  validates :area, presence: true
-  validates :day, presence: true
-  validates :price, presence: true
+  validates :name, :text, :condition, :burden, :area, :day, :price, presence: true
 
   validates :images , presence: true, length: { maximum: 5,　message: "は5枚まで投稿可能です" }
 

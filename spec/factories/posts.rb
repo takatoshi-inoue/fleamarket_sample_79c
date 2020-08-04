@@ -23,14 +23,6 @@ FactoryBot.define do
       end 
     end
 
-
-    trait :image2_post do
-      after(:build) do |post|
-        post.images << FactoryBot.build(:image, post: post)
-        post.images << FactoryBot.build(:image, post: post)
-      end 
-    end
-
     trait :image5_post do
       after(:build) do |post|
         post.images << FactoryBot.build(:image, post: post)
@@ -42,7 +34,6 @@ FactoryBot.define do
 
     trait :image6_post do
       after(:build) do |post|
-        post.images << FactoryBot.build(:image, post: post)
         post.images << FactoryBot.build(:image, post: post)
         post.images << FactoryBot.build(:image, post: post)
         post.images << FactoryBot.build(:image, post: post)
