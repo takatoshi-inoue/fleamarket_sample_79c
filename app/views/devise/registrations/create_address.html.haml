@@ -1,2 +1,6 @@
-%h2 登録が完了しました
-= link_to "トップへ戻る", root_path
+.SubWrapper
+  = render partial: "posts/SubHeader"
+  %h2.kanryoutaitle 🐱登録が完了しました！🐱
+  .tourokukanryou
+  = link_to "トップへ戻る", root_path
+  = render partial: "posts/SubFooter"
