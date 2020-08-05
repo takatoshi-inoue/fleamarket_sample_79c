@@ -324,7 +324,6 @@
       }
     }
   }
-  
 }
   
 
@@ -403,19 +402,6 @@
   transition: all ease-out .3s;
 }
 
-.delete__url{
-  display: block;
-  margin-top: 16px;
-  background: #c0c0c0;
-  font-size: 14px;
-  color: #fff;
-  line-height: 40px;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 16px;
-  transition: all ease-out .3s;
-}
-
 .items-box_photo__sold{
   width: 0;
   height: 0;
@@ -434,4 +420,16 @@
     letter-spacing: 2px;
     font-weight: 600;
   }
+
+.delete__url{
+  display: block;
+  margin-top: 16px;
+  background: #c0c0c0;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: all ease-out .3s;
 }
