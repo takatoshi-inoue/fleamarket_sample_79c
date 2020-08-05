@@ -1,0 +1,8 @@
+.CardDeleteBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__CardDeleteBoxCenter {
+    margin-top: 50px;
+  }
+}

@@ -7,7 +7,7 @@
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox1
           %label カード番号
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox2
-          必須
+          %label 必須
       .CardsRegister__CardsBox__FormTag__TextBox
         = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
         %ul.CardsRegister__CardsBox__FormTag__TextBox__KindOf
@@ -30,8 +30,9 @@
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox1
           %label 有効期限
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox2 
-          必須
+          %label 必須
       .CardsRegister__CardsBox__FormTag__ManthBox 
+        
         .CardsRegister__CardsBox__FormTag__ManthBox__Manth
           %select#exp_month{name: "exp_month", type: "text"}
             %option{value: ""} --
@@ -64,14 +65,13 @@
           %span 年
           %br
           %br
-      .CardsRegister__CardsBox__FormTag__NumberBox    
+      .CardsRegister__CardsBox__FormTag__NumberBox
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox1
-        %label セキュリティコード
+          %label セキュリティコード
         .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox2 
-          必須
-          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-          %br
-          #card_token
-          %br
-      .CardsRegister__CardsBox__FormTag__Securite      
-        = submit_tag "追加する", id: "token_submit"
+          %label 必須
+      .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox3
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+        #card_token
+    .CardsRegister__CardsBox__FormTag__Securite      
+      = submit_tag "追加する", id: "token_submit"

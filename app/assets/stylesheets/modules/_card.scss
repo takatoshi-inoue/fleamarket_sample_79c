@@ -1,34 +1,94 @@
 .CardsRegister {
   width: 700px;
   height: 562px;
-  
   margin: 0 auto;
   
   &__CardsBox {
     font-size: 24px;
     width: 700px;
     height: 50px;
+    text-align: center;
+    margin-top: 20px;
     
     &__FormTag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
       &__NumberBox {
         display: flex;
+        margin-top: 32px;
+        
         &__NumberBox1 {
-
+          margin-right: 10px;
+        
         }
         &__NumberBox2 {
-          
+          background-color: #ea352d;
+          color: white;
+          border-radius: 2px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: block;
+        }
+        &__NumberBox3 {
+          margin-top: 10px;
+        
         }
       }
       &__TextBox {
-
+        margin-top: 10px;
         &__KindOf {
           display: flex;
+          width: 49px;
+          height: 20px;
+          margin-top: 10px;
+          
           &__KindOfLi {
-
+            
           }
+
         }
       }
+      
+
+      &__ManthBox {
+        display: flex;
+
+        &__Manth {
+          margin-top: 10px;
+        }
+      }
+      
+      &__TextBox {
+        
+        &__Manth {
+
+        }
+      }
+      &__Securite {
+        
+        input {
+          display: block;
+          width: 200px;
+          line-height: 48px;
+          font-size: 14px;
+          border-radius: 4px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          margin-top: 10px;
+          @media screen and (max-width: 900px) {
+            background-color: rgba(36, 36, 206, 0.564);
+            border: 1px solid rgba(36, 36, 206, 0.564);
+            
+      
+          }  
+        }
+      } 
     }
   }
 }

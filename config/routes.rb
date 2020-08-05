@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:new,:show]
   resources :users, only: [:show]
 
-  resources :cards, only: [:new, :show, :destroy, :index] do
+  resources :cards, only: [:index, :new, :show, :destroy] do
     collection do
       post 'pay', to: 'cards#pay'
     end
