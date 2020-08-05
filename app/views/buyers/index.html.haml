@@ -21,8 +21,6 @@
   .buy-content__user-info
     .buy-content__user-info__inner
       %h3 支払方法
-      .user-info-update
-        = link_to "変更する", "#", calss:"update-btn"
       .user-info-text
       - if @default_card_information.blank?
         %br /
@@ -35,14 +33,5 @@
         %br
   .buy-content__user-info
     .buy-content__user-info__inner              
-      %h3 配送先
-      .user-info-update
-        = link_to "変更する","#", calss:"update-btn"
-      .user-info-text
-        〒111-1111
-        %br
-        大阪府大阪市北区〇〇1-11
-        %br
-        山田太郎
-        = form_tag(action: :pay, method: :post) do
-          %button.buy-button{type:"submit"} 購入する
+      = form_tag(action: :pay, method: :post) do
+        %button.buy-button{type:"submit"} 購入する
