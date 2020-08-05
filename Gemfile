@@ -72,6 +72,13 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'rspec-rails', '~> 4.0.0.beta2'
 
+
 gem 'payjp'
 
-gem "jquery-rails"
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'jquery-rails'
+
+gem 'active_hash'

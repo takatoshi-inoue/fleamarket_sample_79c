@@ -42,7 +42,7 @@
         padding: 0;
         &__itemBox{ 
           background-color:#fff;
-          height: 1360px;
+          height: 1260px;
           padding: 24px 40px 40px;
           &__name{
             text-align: center;
@@ -52,7 +52,6 @@
           &__body{
             margin: 16px 0 0;
             &__lists{
-              display: flex;
               position: relative;
               &__image{
                 display: flex;
@@ -275,6 +274,9 @@
           
         }
       }
+      &__brank{
+        height: 60px;
+      }
       &__links{
         height: 24px;
         &__beforeLink{
@@ -386,6 +388,32 @@
   z-index: auto;
   height: 150px;
   object-fit: cover;
+}
+
+.buy__url{
+  display: block;
+  margin-top: 16px;
+  background: #ea352d;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: all ease-out .3s;
+}
+
+.delete__url{
+  display: block;
+  margin-top: 16px;
+  background: #c0c0c0;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: all ease-out .3s;
 }
 
 .items-box_photo__sold{
