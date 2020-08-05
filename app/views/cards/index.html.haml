@@ -1,11 +1,15 @@
 .CardDeleteBox
-  .CardDeleteBox__CardDeleteBoxCenter
-    %h2 クレジットカード情報
-    .CardDeleteBox__CardDeleteBoxCenter__Information
-      %br
-      = "**** **** **** " 
-      %br
-        .exp_month 
-          1/20
-      %input{ type: "hidden", name: "card_id", value: "" }
-      %button.delete-btn 削除する
+  %h2.CardDeleteBox__CardDeleteBoxCenter
+    クレジットカード情報
+  .CardDeleteBox__CardDeleteBoxInformation
+    %br
+    = "**** **** **** " 
+  .CardDeleteBox__Exp_month
+    %br
+    1/20
+    %br
+  .CardDeleteBox__DeleteBtn
+    = submit_tag "削除する", id: "token_submit"
+
+
+    

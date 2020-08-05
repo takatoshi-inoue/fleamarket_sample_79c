@@ -2,7 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  
   &__CardDeleteBoxCenter {
     margin-top: 50px;
+    align-items: center;
+    display: block;
+    
+    font-size: 24px;
+    padding: 8px 24px;
   }
+  &__CardDeleteBoxInformation {
+    align-items: center;
+    
+  }
+  &__Exp_month {
+
+  }
+  &__DeleteBtn {
+    input {
+      display: block;
+      width: 200px;
+      line-height: 48px;
+      font-size: 14px;
+      border-radius: 4px;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      margin-top: 10px;
+    }
+  }  
 }
