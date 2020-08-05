@@ -7,13 +7,13 @@
     .buy-content__item__inner
       .buy-item-main
         .buy-item-image
-          = image_tag "#{@post.images[0].url}", size: '64x64', class: 'buydetails-contet__image'
+          = image_tag "#{@post.images[0].name}",size: '250x250', class: 'buydetails-contet__image'
         .buy-item-detail
           .buy-item-name
-            = @item.name
+            = @post.name
             %p.buy-price
               %span 
-                = "¥#{@item.price.to_s}"
+                = "¥#{@post.price.to_s}"
               %span
                 .shipping-free (税込) 送料込み
   .buy-content__item

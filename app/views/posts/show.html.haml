@@ -32,6 +32,8 @@
             %ul.Show-Main__box__right__content__itemBox__body__lists
               %li.Show-Main__box__right__content__itemBox__body__lists__image
                 = image_tag("Product.jpg", class:"Main_img")
+                
+
                 %ul.Show-Main__box__right__content__itemBox__body__lists__list
                   %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                     = image_tag("Product.jpg", class:"Sub_img")
@@ -50,8 +52,8 @@
           .Show-Main__box__right__content__itemBox__detail
             %p 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
           .Show-Main__box__right__content__itemBox__buy
-            %p=link_to '購入画面に進む', buyers_path(@post), class: "buy__url"
-
+            %p=link_to '購入画面に進む', post_buyers_path(@post), class: "buy__url"
+          
           
 
 
@@ -93,6 +95,10 @@
                 %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__day
                   %th.Show-Main__box__right__content__itemBox__tableBox__tbody__day__th 発送日の目安
                   %th.Show-Main__box__right__content__itemBox__tableBox__tbody__day__td hoge
+          -if @post.buyer_id.present? 
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD    
 
 
 

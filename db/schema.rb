@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_08_03_022009) do
     t.string "price", null: false
     t.bigint "user_id", null: false
     t.string "brand", null: false
+    t.integer "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_posts_on_name"

@@ -52,6 +52,7 @@
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |brand|string|null: false|
+|buyer_id|integer||
 ### Association
 - belongs_to :user dependent: :destroy
 - belongs_to :category dependent: :destroy

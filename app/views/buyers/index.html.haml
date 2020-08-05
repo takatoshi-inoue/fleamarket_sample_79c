@@ -4,7 +4,7 @@
     .buy-content__item__inner
       .buy-item-main
         .buy-item-image
-          = image_tag "#{@post.images[0].url}", size: '64x64', class: 'buydetails-contet__image'
+          = image_tag "#{@post.images[0].name}", size: '250x250', class: 'buydetails-contet__image'
         .buy-item-detail
           .buy-item-name
             = @post.name
