@@ -11,7 +11,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.string :brand, null: false
       t.integer :buyer_id
-
       t.timestamps
     end
     add_index :posts, :name
