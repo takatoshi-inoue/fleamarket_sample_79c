@@ -98,14 +98,9 @@
         新規投稿商品
       .Main__pickupContainer__productbox__lists
         - @posts.each do |post|
-          = puts post
           .Main__pickupContainer__productbox__lists__list
-            %a{href: "/posts/#{post.id}"}
-              .Main__pickupContainer__productbox__lists__list__img
-                -if post.brand == "b"
-                  .Main__pickupContainer__productbox__lists__list__img__souldBox
-                    .Main__pickupContainer__productbox__lists__list__img__souldBox__souldBox1
-                      SOLD OUT
+            = link_to post_path(post), class:"Main__pickupContainer__productbox__lists__list__url" do
+              .Main__pickupContainer__productbox__lists__list__img   
                 - post.images.each do |image|
                   = image_tag image.name,class:"Products_img"
 
@@ -118,12 +113,10 @@
                   円
                 .Main__pickupContainer__productbox__lists__list__body__details__tax
                   (税金)
-            -if post.brand == "b"
-
-              .Main__pickupContainer__productbox__lists__list__body__souldBox
-                .Main__pickupContainer__productbox__lists__list__body__souldBox__souldBox1
-                  SOLD OUT
-            
+            -if post.buyer_id.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
 
   .Main__pickupContainer
     .Main__pickupContainer__head
@@ -184,4 +177,9 @@
 .PurchaseBtn
   %span.PurchaseBtn__text
     出品する
+<<<<<<< HEAD
   = link_to image_tag("Camera.png", class:"Camera_img"), new_post_path
+=======
+    =link_to image_tag("Camera.png", class:"Camera_img") ,new_post_path
+
+>>>>>>> master

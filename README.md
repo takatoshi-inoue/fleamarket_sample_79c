@@ -33,8 +33,9 @@
 ## cardsテーブル
 |Column|Type|Option|
 |------|----|------|
-|card_token|string|null: false|
+|customer_id|string|null: false|
 |user|references|null: false, foreign_key: true|
+|card_id|string|null: false|
 ### Association
 - belongs_to :user
 
@@ -51,6 +52,7 @@
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |brand|string|null: false|
+|buyer_id|integer||
 ### Association
 - belongs_to :user dependent: :destroy
 - belongs_to :category dependent: :destroy

@@ -78,12 +78,63 @@ ja:
                   too_short: "は%{count}文字以上に設定して下さい。"
                   too_long: "は%{count}文字以下に設定して下さい。"
                   invalid: "は有効でありません。"
+        post:
+          attributes:
+                name:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                text:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                condition:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                  # confirmation: "が内容とあっていません。"
+                burden:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                  # confirmation: "が内容とあっていません。"
+                area:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                day:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                  # confirmation: "が内容とあっていません。"
+                price:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
+                  # confirmation: "が内容とあっていません。"
 
-
-
-
-
-
+        images:
+          attributes:
+                name:
+                  # taken: "は既に使用されています。"
+                  blank: "が入力されていません。"
+                  # too_short: "は%{count}文字以上に設定して下さい。"
+                  # too_long: "は%{count}文字以下に設定して下さい。"
+                  # invalid: "は有効でありません。"
     attributes:
       user:
         confirmation_sent_at: パスワード確認送信時刻

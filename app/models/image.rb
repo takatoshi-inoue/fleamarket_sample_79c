@@ -1,3 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :post 
+  validates :name, presence: true
+  mount_uploader :name, ImageUploader
+  belongs_to :post
 end

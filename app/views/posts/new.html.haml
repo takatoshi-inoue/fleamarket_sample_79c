@@ -1,120 +1,105 @@
 .SubWrapper
   = render 'SubHeader'
-  .Post-Main
-    .Post-Main__images
-      .Post-Main__images__messages
-        %label.labelmessage 出品画像
-        %span.spanmessage 必須
-      %p.p1 最大10枚までアップロードできます
-      .Post-Main__images__image
-        .Post-Main__images__image__icon
-          = image_tag asset_path("icon_camera.png")
-          %input{type:"file", class:"Post-Main__images__image__icon__file"}
-        .Post-Main__images__image__text
-          %p.p2 ドラッグアンドドロップ
-          %p.p2 またはクリックしてファイルをアップロード
-    .Post-Main__name-text
-      .Post-Main__name-text__box1
-        .Post-Main__name-text__box1__text
-          %label.labelmessage 商品名
+  = form_with model: @post, local: true do |f|
+    .Post-Main
+      .Post-Main__images
+        .Post-Main__images__messages
+          %label.labelmessage 出品画像
           %span.spanmessage 必須
-        %input{class:"Post-Main__name-text__box1__form", placeholder:"40文字まで"}
-      .Post-Main__name-text__box2
-        .Post-Main__name-text__box2__text
-          %label.labelmessage 商品の説明
-          %span.spanmessage 必須
-        %textarea{class:"Post-Main__name-text__box2__form", placeholder:"商品の説明(必須1,000文字以内)"}
-        .Post-Main__name-text__box2__number
-          0/1000
-    .Post-Main__post-show
-      %p.p3 商品の詳細
-      .Post-Main__post-show__box1
-        .Post-Main__post-show__box1__text
-          %label.labelmessage カテゴリー
-          %span.spanmessage 必須
-        %select{class:"Post-Main__post-show__box1__select"}
-          %option{value: "0"}  選択してください
-          %option{value: "1"}  レディース
-          %option{value: "2"}  メンズ
-          %option{value: "3"}  ベビー・キッズ
-          %option{value: "4"}  インテリア・住まい・小物
-          %option{value: "5"}  本・音楽・ゲーム
-          %option{value: "6"}  おもちゃ・ホビー・グッズ
-          %option{value: "7"}  コスメ・香水・美容
-          %option{value: "8"}  家電・スマホ・カメラ
-          %option{value: "9"}  スポーツ・レジャー
-          %option{value: "10"}  ハンドメイド
-          %option{value: "11"}  チケット
-          %option{value: "12"}  自動車・オートバイ
-          %option{value: "13"}  その他
-        = icon('fas', 'chevron-down', class: "items-btn")
-      .Post-Main__post-show__box2
-        .Post-Main__post-show__box2__text
-          %label.labelmessage ブランド
-          %span.sub 任意
-        %input{class:"Post-Main__post-show__box2__form", placeholder:"例) シャネル"}
-      .Post-Main__post-show__box3
-        .Post-Main__post-show__box3__text
-          %label.labelmessage 商品の状態
-          %span.spanmessage 必須
-        %select{class:"Post-Main__post-show__box3__select"}
-          %option{value: "0"}  選択してください
-          %option{value: "1"}  新品、未使用
-          %option{value: "2"}  未使用に近い
-          %option{value: "3"}  目立った傷や汚れなし
-          %option{value: "4"}  やや傷や汚れあり
-          %option{value: "5"}  傷や汚れあり
-          %option{value: "6"}  全体的に状態が悪い
-        = icon('fas', 'chevron-down', class: "items-btn")
-    .Post-Main__delivery
-      %p.p3 配送について
-      .Post-Main__delivery__box1
-        .Post-Main__delivery__box1__text
-          %label.labelmessage 配送料の負担
-          %span.spanmessage 必須
-        %select{class:"Post-Main__delivery__box1__select"}
-          %option{value: "0"}  選択してください
-          %option{value: "1"}  送料込み(出品者負担)
-          %option{value: "2"}  着払い(購入者負担)
-        = icon('fas', 'chevron-down', class: "items-btn")
-      .Post-Main__delivery__box2
-        .Post-Main__delivery__box2__text
-          %label.labelmessage 発送元の地域
-          %span.spanmessage 必須
-        %select{class:"Post-Main__delivery__box2__select"}
-          %option{value: "0"}  選択してください
-          %option{value: "1"}  --
-          %option{value: "2"}  --
-          %option{value: "3"}  --
-          %option{value: "4"}  --
-        = icon('fas', 'chevron-down', class: "items-btn")
-      .Post-Main__delivery__box3
-        .Post-Main__delivery__box3__text
-          %label.labelmessage 発送までの日数
-          %span.spanmessage 必須
-        %select{class:"Post-Main__delivery__box3__select"}
-          %option{value: "0"}  選択してください
-          %option{value: "1"}  1~2日で発送
-          %option{value: "2"}  2~3日で発送
-          %option{value: "3"}  4~7日で発送
-        = icon('fas', 'chevron-down', class: "items-btn")
-    .Post-Main__price
-      %p.p3 価格（¥300~9,999,999）
-      .Post-Main__price__box1
-        .Post-Main__price__box1__text
-          %label.labelmessage 販売価格
-          %span.spanmessage 必須
-        .Post-Main__price__box1__forms
-          %span.money ¥
-          %input{class:"Post-Main__price__box1__forms__form", placeholder:"0"}
-      .Post-Main__price__box2
-        %p.p4 販売手数料（10%）
-        %p.p5 ー
-      .Post-Main__price__box3
-        %p.p4 販売利益
-        %p.p5 ー
-    .Post-Main__btns
-      = link_to("出品する", root_path, {class: "Post-Main__btns__btn1"})
-      = link_to("下書きに保存", root_path, {class: "Post-Main__btns__btn2"})
-      = link_to("もどる", root_path, {class: "Post-Main__btns__btn3"})
+        %p.p1 最大5枚までアップロードできます
+        %label{for: "post_images_attributes_0_name", class: "Post-Main__images__image"}
+          #image-box
+            #previews
+              - if @post.persisted?
+                - @post.images.each_with_index do |image, i|
+                  = image_tag image.url, data: { index: i }, width: "120", height: '120'
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index" => "#{image.index}"}
+                = image.file_field :name ,class:"js-file"
+                %span.js-remove 
+              - if @post.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            - if @post.persisted?
+              .js-file_group{"data-index" => "#{@post.images.count}"}
+                = file_field_tag :name, name: "post[images_attributes][#{@post.images.count}][name]", class: 'js-file'
+                .js-remove 削除
+            .BOX
+        .Post-Main__images__icons
+          .Post-Main__images__icons__icon
+            = image_tag asset_path("icon_camera.png")
+          .Post-Main__images__icons__text
+            %p.p2 クリックしてファイルをアップロード
+      .Post-Main__name-text
+        .Post-Main__name-text__box1
+          .Post-Main__name-text__box1__text
+            %label.labelmessage 商品名
+            %span.spanmessage 必須
+          = f.text_field :name, placeholder: "40文字まで" , class:"Post-Main__name-text__box1__form"
+        .Post-Main__name-text__box2
+          .Post-Main__name-text__box2__text
+            %label.labelmessage 商品の説明
+            %span.spanmessage 必須
+          = f.text_area :text, placeholder: "商品の説明(必須1,000文字以内)" , rows: "10", class:"Post-Main__name-text__box2__form"
+          .Post-Main__name-text__box2__number
+            0/1000
+      .Post-Main__post-show
+        %p.p3 商品の詳細
+        .Post-Main__post-show__box1
+          .Post-Main__post-show__box1__text
+            %label.labelmessage カテゴリー
+            %span.spanmessage 必須
+          #category_field
+            = f.collection_select :category_id, @parents, :id, :name, { include_blank: "---", selected:"" }, id: "category_form", class: "Post-Main__post-show__box1__select"
+            -# = icon('fas', 'chevron-down', class: "items-btn")
+        .Post-Main__post-show__box2
+          .Post-Main__post-show__box2__text
+            %label.labelmessage ブランド
+            %span.sub 任意
+          = f.text_field :brand, placeholder: "例) シャネル" , class:"Post-Main__post-show__box2__form"
+        .Post-Main__post-show__box3
+          .Post-Main__post-show__box3__text
+            %label.labelmessage 商品の状態
+            %span.spanmessage 必須
+          = f.select :condition, Post.conditions.keys, {}, {class: "Post-Main__post-show__box3__select"}
+          -# = icon('fas', 'chevron-down', class: "items-btn")
+      .Post-Main__delivery
+        %p.p3 配送について
+        .Post-Main__delivery__box1
+          .Post-Main__delivery__box1__text
+            %label.labelmessage 配送料の負担
+            %span.spanmessage 必須
+          = f.select :burden, Post.burdens.keys, {}, {class: "Post-Main__delivery__box1__select"}
+          -# = icon('fas', 'chevron-down', class: "items-btn")
+        .Post-Main__delivery__box2
+          .Post-Main__delivery__box2__text
+            %label.labelmessage 発送元の地域
+            %span.spanmessage 必須
+          = f.select :area, Post.areas.keys, {}, {class: "Post-Main__delivery__box2__select"}
+          -# = icon('fas', 'chevron-down', class: "items-btn")
+        .Post-Main__delivery__box3
+          .Post-Main__delivery__box3__text
+            %label.labelmessage 発送までの日数
+            %span.spanmessage 必須
+          = f.select :day, Post.days.keys, {}, {class: "Post-Main__delivery__box3__select"}
+          -# = icon('fas', 'chevron-down', class: "items-btn")
+      .Post-Main__price
+        %p.p3 価格（¥300~9,999,999）
+        .Post-Main__price__box1
+          .Post-Main__price__box1__text
+            %label.labelmessage 販売価格
+            %span.spanmessage 必須
+          .Post-Main__price__box1__forms
+            %span.money ¥
+            = f.text_field :price, placeholder: "0" , class:"Post-Main__price__box1__forms__form"
+        .Post-Main__price__box2
+          %p.p4 販売手数料（10%）
+          %p.p5 ー
+        .Post-Main__price__box3
+          %p.p4 販売利益
+          %p.p5 ー
+      .Post-Main__btns
+        = f.submit "出品する", class:"Post-Main__btns__btn1"
+        = link_to("下書きに保存", root_path, {class: "Post-Main__btns__btn2"})
+        = link_to("もどる", root_path, {class: "Post-Main__btns__btn3"})
   = render 'SubFooter'
+

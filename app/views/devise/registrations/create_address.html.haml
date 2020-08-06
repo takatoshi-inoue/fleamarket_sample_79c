@@ -1,2 +1,9 @@
-%h2 登録が完了しました
-= link_to "トップへ戻る", root_path
+.SubWrapper
+  = render partial: "posts/SubHeader"
+  %h2.kanryoutaitle 🐱登録が完了しました！🐱
+  .tourokukanryou
+  = link_to "トップへ戻る", root_path
+
+  .Post-Main__btns
+    = link_to("クレジットカードを登録", new_card_path, {class: "Post-Main__btns__btn2"})
+  = render partial: "posts/SubFooter"

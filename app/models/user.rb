@@ -20,5 +20,8 @@ class User < ApplicationRecord
   validates :birth_day, presence: true
 
   has_one :address, dependent: :destroy
+
+  has_one :card, dependent: :destroy
+
   has_many :posts, dependent: :destroy
 end
