@@ -53,9 +53,12 @@
                 = @post.text
 
               .Show-Main__box__right__content__itemBox__buy
-                - if user_signed_in?
-                -else
+                - if user_signed_in? && cuurent_user.card.persisted? && cuurent_user.id != @post.user_id
                   %p= link_to '購入画面に進む','#',class: "buy__url"
+                -elsif user_signed_in? && cuurent_user.card.blank?
+                  %p *クレジットカードが登録出来ていません*
+                -else
+                  
 
               .Show-Main__box__right__content__itemBox__Edit
                 - if user_signed_in? && current_user.id == @post.user_id 
