@@ -98,11 +98,17 @@
         新規投稿商品
       .Main__pickupContainer__productbox__lists
         - @posts.each do |post|
+          = puts post
           .Main__pickupContainer__productbox__lists__list
-            %a{href: "#"}
+            %a{href: "/posts/#{post.id}"}
               .Main__pickupContainer__productbox__lists__list__img
+                -if post.brand == "b"
+                  .Main__pickupContainer__productbox__lists__list__img__souldBox
+                    .Main__pickupContainer__productbox__lists__list__img__souldBox__souldBox1
+                      SOLD OUT
                 - post.images.each do |image|
                   = image_tag image.name,class:"Products_img"
+
             .Main__pickupContainer__productbox__lists__list__body
               .Main__pickupContainer__productbox__lists__list__body__name
                 = post.name
@@ -112,9 +118,13 @@
                   円
                 .Main__pickupContainer__productbox__lists__list__body__details__tax
                   (税金)
+            -if post.brand == "b"
 
+              .Main__pickupContainer__productbox__lists__list__body__souldBox
+                .Main__pickupContainer__productbox__lists__list__body__souldBox__souldBox1
+                  SOLD OUT
+            
 
-                
   .Main__pickupContainer
     .Main__pickupContainer__head
       ピックアップブランド
