@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:new,:create,:show]
+  resources :posts, only: [:new,:create,:show,:destroy]
 
   resources :users, only: [:show]
 
