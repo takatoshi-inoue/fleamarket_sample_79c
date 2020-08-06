@@ -9,6 +9,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :day, null: false, default: 0
       t.string :price, null: false
       t.references :user, type: :bigint, foreign_key: true
+      t.bigint :category, foreign_key: true
       t.string :brand
       t.timestamps
     end
