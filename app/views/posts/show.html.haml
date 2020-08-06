@@ -48,9 +48,9 @@
                 = @post.text
 
               .Show-Main__box__right__content__itemBox__buy
-                - if user_signed_in?
-                -else
-                  %p= link_to '購入画面に進む','#',class: "buy__url"
+                -# - if user_signed_in?
+                -# -else
+                %p= link_to '購入画面に進む',post_buyers_path(@post),class: "buy__url"
 
               .Show-Main__box__right__content__itemBox__Edit
                 - if user_signed_in? && current_user.id == @post.user_id 

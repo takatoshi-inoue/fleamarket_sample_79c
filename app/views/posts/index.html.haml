@@ -102,7 +102,7 @@
             = link_to post_path(post), class:"Main__pickupContainer__productbox__lists__list__url" do
               .Main__pickupContainer__productbox__lists__list__img   
                 - post.images.each do |image|
-                  = image_tag image.name,class:"Products_img"
+                  = image_tag image.name.url, class:"Products_img"
 
             .Main__pickupContainer__productbox__lists__list__body
               .Main__pickupContainer__productbox__lists__list__body__name
@@ -177,9 +177,6 @@
 .PurchaseBtn
   %span.PurchaseBtn__text
     出品する
-<<<<<<< HEAD
-  = link_to image_tag("Camera.png", class:"Camera_img"), new_post_path
-=======
     =link_to image_tag("Camera.png", class:"Camera_img") ,new_post_path
 
->>>>>>> master
+
