@@ -36,11 +36,6 @@
                   - @images.each do |images|
                     %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                       = image_tag images.name.url,class:"Sub_img"
-                  -# = image_tag("Product.jpg", class:"Sub_img")
-                  -# %li.Show-Main__box__right__content__itemBox__body__lists__list__img
-                  -#   = image_tag("Product.jpg", class:"Sub_img")
-                  -# %li.Show-Main__box__right__content__itemBox__body__lists__list__img
-                  -#   = image_tag("Product.jpg", class:"Sub_img")
               .Show-Main__box__right__content__itemBox__price
                 .Show-Main__box__right__content__itemBox__price__name
                   = @post.price
@@ -70,7 +65,7 @@
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__name
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__th 出品者
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__td 
-                        /= @user.nickname
+                        = @user.nickname
 
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__category
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__th カテゴリー
