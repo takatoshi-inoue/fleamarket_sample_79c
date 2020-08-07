@@ -332,21 +332,7 @@
               text-align: left;
               position: relative;
               &__soldOut {
-                // color:#fff;
-                // background-color: red;
-                // width: 90px;
-              
-                
-
-                // &__soldOutScss {
-                //   transform: rotate(-45deg);
-                //   font-size: 28px;
-                //   margin:-35px 0px 0px -55px;
-                //   color: #fff;
-                //   letter-spacing: 2px;
-                //   font-weight: 600;
-
-                // }
+         
               }
             }
 
@@ -364,10 +350,6 @@
               }
             }
             &__souldBox {
-              // color:#fff;
-              // background-color: red;
-              // width: 90px;
-              width: 0;
               height: 0;
               border-top: 60px solid #ea352d ;
               border-right: 60px solid transparent;
