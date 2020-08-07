@@ -54,6 +54,8 @@
                   %p= link_to '購入画面に進む',post_buyers_path(@post),class: "buy__url"
                   -if @post.buyer_id.present? 
                     %p= "売り切れ"
+
+
                 -elsif user_signed_in? && current_user.card.blank?
                   %p *クレジットカードが登録出来ていません*
                 -else
