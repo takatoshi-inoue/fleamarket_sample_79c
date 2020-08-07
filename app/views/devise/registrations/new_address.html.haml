@@ -15,11 +15,8 @@
           .field
             = f.label :都道府県,  class:"field__name"
             %span.Required 必須
-            %br/
-            = f.select :prefectures, ["--",
-              "北海道",
-              "青森県",
-              ], {},{class:"field__box"}
+            %br/ 
+            = f.select :prefecture, Address.prefectures.keys, {include_blank: "選択してください", selected:""}, {class:"field__box"}
           .field
             = f.label :市区町村, class:"field__name"
             %span.Required 必須

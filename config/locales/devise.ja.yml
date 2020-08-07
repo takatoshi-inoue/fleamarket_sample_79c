@@ -78,6 +78,16 @@ ja:
                   too_short: "は%{count}文字以上に設定して下さい。"
                   too_long: "は%{count}文字以下に設定して下さい。"
                   invalid: "は有効でありません。"
+
+      model:
+        address:
+          attributes:
+                postal code: 郵便番号
+                prefectures: 都道府県
+                city: 市区町村
+                address: 番地
+                
+
         post:
           attributes:
                 name:
@@ -168,9 +178,18 @@ ja:
         birth_day: 生年月日（日）
         first_name_kana: 名字（フリガナ）
         last_name_kana: 名前（フリガナ）
+        
+
+      address: 
+        postal_code: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address: 番地
+        
 
     models:
-      user: ユーザ
+      user: ユーザー
+      address: 住所情報
   devise:
     confirmations:
       confirmed: アカウントを登録しました。
