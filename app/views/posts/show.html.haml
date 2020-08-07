@@ -55,7 +55,6 @@
                 -elsif user_signed_in? && cuurent_user.card.blank?
                   %p *クレジットカードが登録出来ていません*
                 -else
-                  
 
               .Show-Main__box__right__content__itemBox__Edit
                 - if user_signed_in? && current_user.id == @post.user_id 
