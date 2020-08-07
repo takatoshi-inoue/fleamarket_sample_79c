@@ -1,27 +1,30 @@
-=render "SubHeader"
+.SubWrapper
+  = render 'posts/SubHeader'
 
-.Buy
-  .Buy__content
-    %h2.Buy__content__title
-      購入が完了しました
-    .Buy__content__post
-      .Buy__content__post__inner
-        .Buy__content__post__inner__image
-          = image_tag "#{@post.images[0].name}",size: '80x80', class: 'buydetails-contet__image'
-        .Buy__content__post__inner__detail
-          .Buy__content__post__inner__detail__name
-            = @post.name
-          .Buy__content__post__inner__detail__money
-            %p.Buy__content__post__inner__detail__name__price
-            %span 
-              = "¥#{@post.price.to_s}"
-            %span
-              .Buy__content__post__inner__detail__money__free (税込) 送料込み
-    .Buy__content__Form
-      .Buy__content__Form__form__table
-        .Buy__content__Form__form__table__left
-          支払金額
-        .Buy__content__Form__form__table__right
-          = "¥#{@post.price.to_s}"
-        .Buy__content__Form__form__submit
-        = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
+  .Buy
+    .Buy__content
+      %h2.Buy__content__title
+        購入が完了しました
+      .Buy__content__post
+        .Buy__content__post__inner
+          .Buy__content__post__inner__image
+            = image_tag "#{@post.images[0].name}",size: '80x80', class: 'buydetails-contet__image'
+          .Buy__content__post__inner__detail
+            .Buy__content__post__inner__detail__name
+              = @post.name
+            .Buy__content__post__inner__detail__money
+              %p.Buy__content__post__inner__detail__name__price
+              %span 
+                = "¥#{@post.price.to_s}"
+              %span
+                .Buy__content__post__inner__detail__money__free (税込) 送料込み
+      .Buy__content__Form
+        .Buy__content__Form__form__table
+          .Buy__content__Form__form__table__left
+            支払金額
+          .Buy__content__Form__form__table__right
+            = "¥#{@post.price.to_s}"
+          .Buy__content__Form__form__submit
+          = link_to "トップページへ戻る", root_path, class: 'buy-content__user-info__submit__button'
+
+  =render 'posts/SubFooter'
