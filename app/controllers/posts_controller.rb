@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:images).order('created_at DESC')
+
   end
 
   def new
@@ -19,10 +20,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def set_parents
-    @parents = Category.where(ancestry: nil)
-  end
-
   def search
     #ajax通信を開始
     respond_to do |format|
@@ -36,7 +33,6 @@ class PostsController < ApplicationController
       end
     end
   end
-
 
   def show
     @post = Post.find(params[:id])
@@ -58,5 +54,10 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name ,:text, :condition, :burden, :category_id, :area, :day, :price, :brand, images_attributes: [:name]).merge(user_id: current_user.id)
   end
+  
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
+
 end
 
