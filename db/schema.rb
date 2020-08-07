@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_082108) do
+ActiveRecord::Schema.define(version: 2020_08_07_093740) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
-    t.string "prefectures", null: false
+    t.integer "prefecture", default: 0, null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "apartment"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2020_08_06_082108) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "text", null: false
-    t.string "condition", default: "0", null: false
-    t.string "burden", default: "0", null: false
-    t.string "area", default: "0", null: false
-    t.string "day", default: "0", null: false
+    t.integer "condition", default: 0, null: false
+    t.integer "burden", default: 0, null: false
+    t.integer "area", default: 0, null: false
+    t.integer "day", default: 0, null: false
     t.string "price", null: false
     t.bigint "user_id", null: false
     t.string "brand", null: false
