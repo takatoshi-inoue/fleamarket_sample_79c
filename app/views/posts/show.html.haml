@@ -36,11 +36,6 @@
                   - @images.each do |images|
                     %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                       = image_tag images.name.url,class:"Sub_img"
-                  -# = image_tag("Product.jpg", class:"Sub_img")
-                  -# %li.Show-Main__box__right__content__itemBox__body__lists__list__img
-                  -#   = image_tag("Product.jpg", class:"Sub_img")
-                  -# %li.Show-Main__box__right__content__itemBox__body__lists__list__img
-                  -#   = image_tag("Product.jpg", class:"Sub_img")
               .Show-Main__box__right__content__itemBox__price
                 .Show-Main__box__right__content__itemBox__price__name
                   = @post.price
@@ -53,9 +48,15 @@
                 = @post.text
 
               .Show-Main__box__right__content__itemBox__buy
-                - if user_signed_in?
+                - if user_signed_in? && current_user.card.persisted? && current_user.id != @post.user_id 
+                  %p= link_to '購入画面に進む',post_buyers_path(@post),class: "buy__url"
+                  -if @post.buyer_id.present? 
+                    %p= "売り切れ"
+                -# -elsif user_signed_in? && 
+                  -elsif user_signed_in? && cuurent_user.card.blank?
+                    %p *クレジットカードが登録出来ていません*
                 -else
-                  %p= link_to '購入画面に進む','#',class: "buy__url"
+                  
 
               .Show-Main__box__right__content__itemBox__Edit
                 - if user_signed_in? && current_user.id == @post.user_id 
@@ -70,7 +71,7 @@
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__name
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__th 出品者
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__td 
-                        /= @user.nickname
+                        = @user.nickname
 
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__category
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__th カテゴリー

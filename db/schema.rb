@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2020_08_06_115135) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_id", null: false
+    t.bigint "user_id"
+    t.string "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "ancestry"
@@ -40,13 +49,14 @@ ActiveRecord::Schema.define(version: 2020_08_06_115135) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "text", null: false
-    t.integer "condition", default: 0, null: false
-    t.integer "burden", default: 0, null: false
-    t.integer "area", default: 0, null: false
-    t.integer "day", default: 0, null: false
+    t.string "condition", default: "0", null: false
+    t.string "burden", default: "0", null: false
+    t.string "area", default: "0", null: false
+    t.string "day", default: "0", null: false
     t.string "price", null: false
-    t.bigint "user_id"
-    t.string "brand"
+    t.bigint "user_id", null: false
+    t.string "brand", null: false
+    t.integer "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
@@ -77,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_115135) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "images", "posts"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
