@@ -3,6 +3,16 @@
   .Main-resistrations
     .Main-resistrations__title
       %h2 会員情報入力
+    .Main-sessions__line
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'Main-sessions__line__btn Main-sessions__line__btn--google' do
+        = icon("fab", "google", class: 'Main-sessions__line__btn--google__icon')
+        Googleでログイン
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'Main-sessions__line__btn Main-sessions__line__btn--facebook' do
+        = icon("fab", "facebook-square", class: 'Main-sessions__line__btn--facebook__icon')
+        Facebookでログイン
+      = link_to "#", class: 'Main-sessions__line__btn Main-sessions__line__btn--apple' do
+        = icon("fab", "apple", class: 'Main-sessions__line__btn--apple__icon')
+        Appleでログイン
     .Main-resistrations__contents
       .Main-resistrations__contents__list
         = form_for(@user, url: user_registration_path) do |f|
@@ -17,16 +27,22 @@
             %span.Required 必須
             %br/
             = f.email_field :email,  autocomplete: "email", class:"field__box", placeholder: "例）PC・携帯どちらでも可"
-          .field
-            = f.label :パスワード, class:"field__name"
-            %span.Required 必須
-            %br/
-            = f.password_field :password, autocomplete: "new-password", class:"field__box", placeholder: "7文字以上の半角英数字"
-          .field
-            = f.label :パスワード（確認用）, class:"field__name"
-            %span.Required 必須
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class:"field__box", placeholder: "7文字以上の半角英数字（確認用）"
+          - if @sns
+            = hidden_field_tag :sns_auth, true
+          - else
+            .field
+              = f.label :パスワード, class:"field__name"
+              %span.Required 必須
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} 文字以上)
+              %br/
+              = f.password_field :password, autocomplete: "new-password", class:"field__box", placeholder: "7文字以上の半角英数字"
+            .field
+              = f.label :パスワード（確認用）, class:"field__name"
+              %span.Required 必須
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class:"field__box", placeholder: "7文字以上の半角英数字（確認用）"
           .field
             = f.label :お名前（全角）, class:"field__name"
             %span.Required 必須
