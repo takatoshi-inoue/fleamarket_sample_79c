@@ -63,7 +63,7 @@
 
 
               .Show-Main__box__right__content__itemBox__Edit
-                - if user_signed_in? && current_user.id == @post.user_id 
+                - if user_signed_in? && current_user.id == @post.user_id && !@post.buyer_id.present? 
                   .Show-Main__box__right__content__itemBox__Edit__edit
                     %p= link_to '商品の編集','#',class: "buy__url"
                   .Show-Main__box__right__content__itemBox__Edit__delete
