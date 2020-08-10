@@ -1,3 +1,9 @@
+require "csv"
+
+CSV.foreach('db/category.csv') do |row|
+  Category.create!(name: row[1])
+end
+
 # レディース
 lady = Category.create(name: "レディース")
 lady_1 = lady.children.create(name: "トップス")
