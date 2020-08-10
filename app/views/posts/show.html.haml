@@ -53,17 +53,19 @@
                 - if user_signed_in? && current_user.card.present? && current_user.id != @post.user_id && !@post.buyer_id.present? 
                   %p= link_to '購入画面に進む',post_buyers_path(@post),class: "buy__url"
 
-                -elsif user_signed_in? && current_user.card.blank?
+                -elsif user_signed_in? && current_user.card.blank? && current_user.id != @post.user_id
                   %p *クレジットカードが登録出来ていません*
                 -else 
                   -if @post.buyer_id.present? 
                     %p= "売り切れ"
+                  - elsif user_signed_in?  && current_user.id == @post.user_id 
+                           
                   -else
                     %p 購入にはログインとカード登録が必要です。
 
 
               .Show-Main__box__right__content__itemBox__Edit
-                - if user_signed_in? && current_user.id == @post.user_id 
+                - if user_signed_in? && current_user.id == @post.user_id && !@post.buyer_id.present? 
                   .Show-Main__box__right__content__itemBox__Edit__edit
                     %p= link_to '商品の編集','#',class: "buy__url"
                   .Show-Main__box__right__content__itemBox__Edit__delete
