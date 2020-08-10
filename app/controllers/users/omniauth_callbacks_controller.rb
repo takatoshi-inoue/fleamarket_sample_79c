@@ -49,7 +49,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
     else
-      # @sns_id = sns_info[:sns].id
       @sns = false
       if sns_info[:sns]
         @sns = true
