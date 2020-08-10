@@ -14,16 +14,16 @@
             - if @post.persisted?
               - @post.images.each_with_index do |image, i|
                 - if image.persisted?
-                  = image_tag image.name.url, data: { index: i }, width: "122", height: '122'
-                  .js-remove 削除
+                  .Previews-edit
+                    = image_tag image.name.url, data: { index: i }, width: "122", height: '122'
+                    .js-remove 削除
         .BOX
           = f.fields_for :images do |image|
-            .Previews-new
-              .js-file_group{"data-index" => "#{image.index}"}
-                = image.file_field :name ,class:"js-file"
-                -# %span.js-remove 
-              - if image.object.persisted?
-                = image.check_box :_destroy, data:{ index: image.index}, class: 'hidden-destroy'
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :name ,class:"js-file"
+              -# %span.js-remove 
+            - if image.object.persisted?
+              = image.check_box :_destroy, data:{ index: image.index}, class: 'hidden-destroy'
               
         .Post-Main__images__icons
           .Post-Main__images__icons__icon
