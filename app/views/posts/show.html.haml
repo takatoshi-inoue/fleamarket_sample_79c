@@ -82,9 +82,13 @@
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__category
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__th カテゴリー
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__td 
-                        %p= link_to 'ベビーキッズ', "#", class: "Link__url" 
-                        %p= link_to 'ベビー服(男女兼用)~95cm', "#", class: "Link__url" 
-                        %p= link_to 'アウター', "#", class: "Link__url" 
+                        = @category.parent.parent.name
+                        %br
+                        = @category.parent.name
+                        %br
+                        = @category.name
+                        -# = @category.ancestry
+
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__brand
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__brand__th ブランド
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__brand__td 
