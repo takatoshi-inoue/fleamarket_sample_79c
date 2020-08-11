@@ -14,7 +14,15 @@ $(function(){
   // img src=URL class="" id=""
   const buildImg = (index, url)=> {
     const html = `
-                  <div class="Previews-edit">
+                  <label class="Previews-edit">
+                  <img data-index="${index}" src="${url}" width="122px" height="122px">
+                    <span class="js-remove">削除</span>
+                 `;
+    return html;
+  }
+
+  const buildEdit = (index, url)=> {
+    const html = `
                   <img data-index="${index}" src="${url}" width="122px" height="122px">
                     <span class="js-remove">削除</span>
                  `;
@@ -30,31 +38,51 @@ $(function(){
   $('.hidden-destroy').hide();
 
   $('.BOX').on('change', '.js-file', function(e) {
+      // console.log()
     const targetIndex = $(this).parent().data('index');
+      // console.log()
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
+      // console.log()
     const blobUrl = window.URL.createObjectURL(file);
     //labelボックスのidとforを更新
     $('.Post-Main__images__image').attr( "for", `post_images_attributes_${targetIndex + 1}_name`);
+      // console.log()
     
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('src', blobUrl);
+        
+      img.setAttribute('name', blobUrl);
+      $(`#post_images_attributes_${targetIndex}`).empty();
+      
+      // $(`.js-file_group[data-index="${targetIndex}"]`).remove();
+      $(`#post_images_attributes_${targetIndex}`).append(buildEdit(targetIndex, blobUrl));
+      
+    
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
+        // console.log()
       // fileIndexの先頭の数字を使ってinputを作る
       const file_field = $(`input[type="file"]:last`);
+        // console.log()  
       const newIndex = file_field.parent().data("index") + 1;
+        // console.log()
       // $('.BOX').append(buildFileField(fileIndex[0]));
       $('.BOX').append(buildFileField(newIndex));
+        
 
       fileIndex.shift();
+        // console.log()
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-
+        // console.log()
+      // ・発火条件を見えているフィールドにする必要がある
+      // ・発火条件のフィールドを押した際に、ディスプレイノンで隠れているところをクリックする処理
+      // ・画像とディスプレイのんされているボタンを組み合わせる
+      // ・もし、画像があるならば一度削除してからアペンド
     }
   });
-
+  
   $('.Post-Main__images__image').on('click', function(e) {
     // e.stopPropagation();
     const file_field = $(`input[type="file"]:last`);

@@ -24,6 +24,7 @@
       background-color: #f8f8f8;
       float: left;
       
+      
     }
 
     .BOX{
@@ -31,7 +32,6 @@
       position: absolute;
       top: 218px;
       width: 620px;
-      overflow-x: scroll;
 
       .js-file_group{
         display: none;
@@ -338,7 +338,8 @@
   position: absolute;
   top: 125px;
   left: 50px;
-  overflow-x: scroll;
+  width: 0px;
+  padding: 0 10px;
   #previews {
     display: flex;
     img {

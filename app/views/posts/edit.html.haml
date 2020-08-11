@@ -14,13 +14,13 @@
             - if @post.persisted?
               - @post.images.each_with_index do |image, i|
                 - if image.persisted?
-                  .Previews-edit
-                    = image_tag image.name.url, data: { index: i }, width: "122", height: '122'
+                  %label.Previews-edit{ id:"post_images_attributes_#{i}", for: "post_images_attributes_#{i}_name"}
+                    = image_tag image.name.url, data: { index: i }, width: "122", height: '122', class: "image-edit" 
                     .js-remove 削除
         .BOX
           = f.fields_for :images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :name ,class:"js-file"
+              = image.file_field :name,  class:"js-file"
               -# %span.js-remove 
             - if image.object.persisted?
               = image.check_box :_destroy, data:{ index: image.index}, class: 'hidden-destroy'
@@ -112,7 +112,6 @@
           %p.p4 販売利益
           %p.p5 ー
       .Post-Main__btns
-        = f.submit "出品する", class:"Post-Main__btns__btn1"
-        = link_to("下書きに保存", root_path, {class: "Post-Main__btns__btn2"})
+        = f.submit "変更する", class:"Post-Main__btns__btn1"
         = link_to("もどる", root_path, {class: "Post-Main__btns__btn3"})
   = render 'SubFooter'
