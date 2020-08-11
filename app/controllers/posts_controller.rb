@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_parents, only: [:new, :create,:show, :edit]
+  before_action :set_post, only: [:show, :destroy, :edit, :update]
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
@@ -34,7 +35,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = @post.user
     @images = @post.images
     @category = @post.category
@@ -42,7 +42,6 @@ class PostsController < ApplicationController
 
 
   def destroy
-    @post = Post.find(params[:id])
     if @post.destroy
       redirect_to root_path
     else
@@ -51,14 +50,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
     @post.images.new
-    # @post = Post.new
-    # @post.images.new
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to root_path  
     else
@@ -77,5 +72,8 @@ class PostsController < ApplicationController
     @parents = Category.where(ancestry: nil)
   end
 
+  def set_post
+    @post = Post.find(params[:id])
+  end 
 end
 
