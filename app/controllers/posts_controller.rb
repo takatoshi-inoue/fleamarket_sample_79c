@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_parents, only: [:new, :create,:show]
+  before_action :set_parents, only: [:new, :create,:show, :edit]
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
