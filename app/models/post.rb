@@ -1,10 +1,13 @@
 class Post < ApplicationRecord
 
+
   validates :name, :text, :condition, :burden, :area, :day, :price, presence: true
+  validates :category , presence: true
+  validates :images , presence: true, length: { maximum: 5, message: "は5枚まで投稿可能です" }
 
-  validates :images , presence: true, length: { maximum: 5,　message: "は5枚まで投稿可能です" }
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
+  belongs_to :category
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -16,9 +19,9 @@ class Post < ApplicationRecord
      やや傷や汚れあり:4,
      傷や汚れあり:5,
      全体的に状態が悪い:6
-   },_suffix: true
+  },_suffix: true
 
-   enum burden:{
+  enum burden:{
     "選択してください":0,
     送料込み（出品者負担）:1,
     着払い（購入者負担）:2

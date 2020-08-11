@@ -49,22 +49,9 @@
           .Post-Main__post-show__box1__text
             %label.labelmessage カテゴリー
             %span.spanmessage 必須
-          %select{class:"Post-Main__post-show__box1__select"}
-            %option{value: "0"}  選択してください
-            %option{value: "1"}  レディース
-            %option{value: "2"}  メンズ
-            %option{value: "3"}  ベビー・キッズ
-            %option{value: "4"}  インテリア・住まい・小物
-            %option{value: "5"}  本・音楽・ゲーム
-            %option{value: "6"}  おもちゃ・ホビー・グッズ
-            %option{value: "7"}  コスメ・香水・美容
-            %option{value: "8"}  家電・スマホ・カメラ
-            %option{value: "9"}  スポーツ・レジャー
-            %option{value: "10"}  ハンドメイド
-            %option{value: "11"}  チケット
-            %option{value: "12"}  自動車・オートバイ
-            %option{value: "13"}  その他
-          = icon('fas', 'chevron-down', class: "items-btn")
+          #category_field
+            = f.collection_select :category_id, @parents, :id, :name, { include_blank: "---", selected:"" }, id: "category_form", class: "Post-Main__post-show__box1__select"
+            -# = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__post-show__box2
           .Post-Main__post-show__box2__text
             %label.labelmessage ブランド
@@ -75,7 +62,7 @@
             %label.labelmessage 商品の状態
             %span.spanmessage 必須
           = f.select :condition, Post.conditions.keys, {}, {class: "Post-Main__post-show__box3__select"}
-          = icon('fas', 'chevron-down', class: "items-btn")
+          -# = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery
         %p.p3 配送について
         .Post-Main__delivery__box1
@@ -83,19 +70,19 @@
             %label.labelmessage 配送料の負担
             %span.spanmessage 必須
           = f.select :burden, Post.burdens.keys, {}, {class: "Post-Main__delivery__box1__select"}
-          = icon('fas', 'chevron-down', class: "items-btn")
+          -# = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__delivery__box2
           .Post-Main__delivery__box2__text
             %label.labelmessage 発送元の地域
             %span.spanmessage 必須
           = f.select :area, Post.areas.keys, {}, {class: "Post-Main__delivery__box2__select"}
-          = icon('fas', 'chevron-down', class: "items-btn")
+          -# = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__delivery__box3
           .Post-Main__delivery__box3__text
             %label.labelmessage 発送までの日数
             %span.spanmessage 必須
           = f.select :day, Post.days.keys, {}, {class: "Post-Main__delivery__box3__select"}
-          = icon('fas', 'chevron-down', class: "items-btn")
+          -# = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__price
         %p.p3 価格（¥300~9,999,999）
         .Post-Main__price__box1

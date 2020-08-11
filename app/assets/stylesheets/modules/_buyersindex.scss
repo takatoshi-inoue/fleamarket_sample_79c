@@ -1,0 +1,89 @@
+.buy{
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 900px;
+    &__block{
+      margin-left: auto;
+      margin-right: auto;
+      background-color:#fff;
+      height: 600px;
+      width:500px;
+      display: block;
+      text-align: center;
+      &__content{
+        font-size: 24px;
+        &__post{
+          border-top: 1px solid #f8f8f8;
+          padding: 32px 16px;
+          margin: 0px 50px;
+          &__inner{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            &__detail{
+              width: 250px;
+              &__name{
+                font-size: 14px;
+                line-height: 1.4em;
+                margin-bottom: 8px;
+              }
+              &__money{
+                text-align: right;
+                &__price{
+                  font-size: 15px;
+                  font-weight: 600;
+                  margin-left: 8px;
+                }
+                &__free{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        &__payment{
+          border-top: 1px solid #f8f8f8;
+          padding: 32px 16px;
+          margin: 0px 50px;
+          &__table{
+            display: flex;
+            font-size: 18px;
+            font-weight: 600;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-bottom: 24px;
+          }
+        }
+        &__userInfo{
+          border-top: 1px solid #f8f8f8;
+          padding: 32px 16px;
+          margin: 0px 50px;
+          &__inner{
+            vertical-align: baseline;
+            margin: 0px;
+            padding: 0px;
+            border-width: 0px;
+            border-style: initial;
+            border-color: initial;
+            border-image: initial;
+            font: inherit;
+            &__name{
+              display: flex;
+              -webkit-box-pack: justify;
+              justify-content: space-between;
+              margin-bottom: 16px;
+            }
+          }
+        }
+        &__purchase{
+          border-top: 1px solid #f8f8f8;
+          padding: 32px 16px;
+          margin: 0px 50px;
+        }
+      }
+    }
+}  

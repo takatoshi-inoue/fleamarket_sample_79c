@@ -36,6 +36,8 @@
                   - @images.each do |images|
                     %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                       = image_tag images.name.url,class:"Sub_img"
+
+              .Show-Main__box__right__content__itemBox__price
                 .Show-Main__box__right__content__itemBox__price__name
                   = @post.price
                 .Show-Main__box__right__content__itemBox__price__detail
@@ -47,12 +49,24 @@
                 = @post.text
 
               .Show-Main__box__right__content__itemBox__buy
-                - if user_signed_in?
-                -else
-                  %p= link_to '購入画面に進む','#',class: "buy__url"
+
+
+                - if user_signed_in? && current_user.card.present? && current_user.id != @post.user_id && !@post.buyer_id.present? 
+                  %p= link_to '購入画面に進む',post_buyers_path(@post),class: "buy__url"
+
+                -elsif user_signed_in? && current_user.card.blank? && current_user.id != @post.user_id
+                  %p *クレジットカードが登録出来ていません*
+                -else 
+                  -if @post.buyer_id.present? 
+                    %p= "売り切れ"
+                  - elsif user_signed_in?  && current_user.id == @post.user_id 
+                           
+                  -else
+                    %p 購入にはログインとカード登録が必要です。
+
 
               .Show-Main__box__right__content__itemBox__Edit
-                - if user_signed_in? && current_user.id == @post.user_id 
+                - if user_signed_in? && current_user.id == @post.user_id && !@post.buyer_id.present? 
                   .Show-Main__box__right__content__itemBox__Edit__edit
                     %p= link_to '商品の編集', edit_post_path, method: :get, class: "buy__url"
                   .Show-Main__box__right__content__itemBox__Edit__delete
@@ -64,14 +78,17 @@
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__name
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__th 出品者
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__name__td 
-                        /= @user.nickname
+                        = @user.nickname
 
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__category
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__th カテゴリー
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__category__td 
-                        %p= link_to 'ベビーキッズ', "#", class: "Link__url" 
-                        %p= link_to 'ベビー服(男女兼用)~95cm', "#", class: "Link__url" 
-                        %p= link_to 'アウター', "#", class: "Link__url" 
+                        = @category.parent.parent.name
+                        %br
+                        = @category.parent.name
+                        %br
+                        = @category.name
+
                     %tr.Show-Main__box__right__content__itemBox__tableBox__tbody__brand
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__brand__th ブランド
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__brand__td 
