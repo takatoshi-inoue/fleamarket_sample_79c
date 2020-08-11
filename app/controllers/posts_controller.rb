@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
-  before_action :set_parents, only: [:new, :create]
+  before_action :set_parents, only: [:new, :create,:show]
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
-
   end
 
   def new
@@ -38,7 +37,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @images = @post.images
+    @category = @post.category
   end
+
 
   def destroy
     @post = Post.find(params[:id])
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :show
-    end  
+    end
   end
   
   private
