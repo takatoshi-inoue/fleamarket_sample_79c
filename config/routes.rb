@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:new,:create,:show,:destroy] do
+  resources :posts, only: [:new,:create,:show,:destroy,:edit,:update] do
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'

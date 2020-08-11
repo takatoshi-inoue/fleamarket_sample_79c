@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_parents, only: [:new, :create,:show]
+  before_action :set_parents, only: [:new, :create,:show, :edit]
+  before_action :set_post, only: [:show, :destroy, :edit, :update]
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
@@ -34,7 +35,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = @post.user
     @images = @post.images
     @category = @post.category
@@ -42,23 +42,38 @@ class PostsController < ApplicationController
 
 
   def destroy
-    @post = Post.find(params[:id])
     if @post.destroy
       redirect_to root_path
     else
       render :show
     end
   end
+
+  def edit
+    @post.images.new
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to root_path  
+    else
+      render :edit
+    end
+  end  
   
   private
   
   def post_params
-    params.require(:post).permit(:name ,:text, :condition, :burden, :category_id, :area, :day, :price, :brand, images_attributes: [:name]).merge(user_id: current_user.id)
+
+    params.require(:post).permit(:name ,:text, :condition, :burden, :category_id, :area, :day, :price, :brand, images_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
   def set_parents
     @parents = Category.where(ancestry: nil)
   end
 
+  def set_post
+    @post = Post.find(params[:id])
+  end 
 end
 

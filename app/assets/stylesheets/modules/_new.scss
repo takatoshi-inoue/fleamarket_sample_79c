@@ -1,5 +1,5 @@
 .Post-Main {
-  width: 700px;
+  width: 720px;
   margin-top: 30px;
   background-color:white;
   &__images {
@@ -23,35 +23,24 @@
       justify-content: flex-start;
       background-color: #f8f8f8;
       float: left;
+      
+      
+    }
 
-      .js-file {
-        width: 100%;
-        height: 100%;
+    .BOX{
+      display: flex;
+      position: absolute;
+      top: 218px;
+      width: 620px;
+
+      .js-file_group{
         display: none;
-        float: left;
-        margin-right: 10px;
-      }
-
-      .js-group{
-        display:flex;
-      }
-
-      .BOX{
-        display: flex;
-        position: absolute;
-        top: 218px;
-        width: 620px;
-
-        .js-file_group{
-          margin-left: 45px;
-          margin-right: 45px;
-        }
       }
     }
     &__icons {
       position: absolute;
-      top: 160px;
-      right: 230px;
+      top: 170px;
+      right: 250px;
       &__icon {
         display: flex;
         flex-direction: column;
@@ -341,4 +330,35 @@
   right: 18px;
   font-size: 20px;
   color: gray;
+}
+
+#image-box {
+  display: flex;
+  float: left;
+  position: absolute;
+  top: 125px;
+  left: 50px;
+  width: 0px;
+  padding: 0 10px;
+  #previews {
+    display: flex;
+    img {
+      margin-right: 10px;
+    }
+    .js-remove {
+    }
+  }
+
+}
+
+.Previews-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Previews-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

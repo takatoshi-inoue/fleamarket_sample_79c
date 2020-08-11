@@ -36,6 +36,7 @@
                   - @images.each do |images|
                     %li.Show-Main__box__right__content__itemBox__body__lists__list__img
                       = image_tag images.name.url,class:"Sub_img"
+
               .Show-Main__box__right__content__itemBox__price
                 .Show-Main__box__right__content__itemBox__price__name
                   = @post.price
@@ -67,7 +68,7 @@
               .Show-Main__box__right__content__itemBox__Edit
                 - if user_signed_in? && current_user.id == @post.user_id && !@post.buyer_id.present? 
                   .Show-Main__box__right__content__itemBox__Edit__edit
-                    %p= link_to '商品の編集','#',class: "buy__url"
+                    %p= link_to '商品の編集', edit_post_path, method: :get, class: "buy__url"
                   .Show-Main__box__right__content__itemBox__Edit__delete
                     %p= link_to 'この商品を削除する', post_path, method: :delete, class: "delete__url"
 
