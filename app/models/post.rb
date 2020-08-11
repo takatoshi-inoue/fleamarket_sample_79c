@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   validates :images , presence: true, length: { maximum: 5, message: "は5枚まで投稿可能です" }
 
 
-  belongs_to :user, dependent: :destroy
-  belongs_to :category, dependent: :destroy
+  belongs_to :user
+  belongs_to :category
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 

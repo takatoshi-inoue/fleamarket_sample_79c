@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get 'card/show'
 
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
   }
+
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:new,:create,:show,:destroy] do
+  resources :posts, only: [:new,:create,:show,:destroy,:edit,:update] do
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'
