@@ -4,14 +4,14 @@
       .Header__box__top__icon
         = link_to image_tag("logo.png", class:"Header_img"), "/"
       .Header__box__top__search
-        .Header__box__top__search__input
-          %input.SearchInput{name: "key", placeholder: "キーワードから探す"}/
-          .Header__box__top__search__input__icon
-            %button{:type => "submit"}
-              .searchBox__icon
-                = link_to image_tag("icon-search 1.png", class:"Search_img"), "/"
-                %input{name: "authenticity_token", type: "hidden"}
+        = form_with(url: search_posts_path, local: true, method: :get,) do |form|
+          .Header__box__top__search__input
+            = form.text_field :keyword, placeholder: "投稿を検索する", class: "SearchInput"
             .Header__box__top__search__input__icon
+              %button{:type => "submit"}
+                .searchBox__icon
+                  = link_to image_tag("icon-search 1.png", class:"Search_img"), "/"
+                  %input{name: "authenticity_token", type: "hidden"}
 
     .Header__box__bottom
       .Header__box__bottom__listLeft
