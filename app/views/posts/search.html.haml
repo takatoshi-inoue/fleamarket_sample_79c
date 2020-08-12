@@ -1,10 +1,6 @@
 =render 'Header'
 
 .contents
-  .contents__title 
-    -# -# .contents__title__name
-    -# -#   =@posts.name
-    -#   %p.contents__title__letter の検索結果
   .contents__posts
     - @posts.each do |post|
       .contents__posts__lists
@@ -22,9 +18,5 @@
                 円
               .contents__posts__lists__body__details__tax
                 (税金)
-          -# -if post.buyer_id.present? 
-          -#   .items-box_photo__sold
-          -#     .items-box_photo__sold__inner
-          -#       SOLD
 
 =render 'Footer'
