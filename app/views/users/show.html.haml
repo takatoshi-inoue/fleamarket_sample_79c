@@ -2,8 +2,6 @@
 
 .MyBox
   = render 'sidebar'
-
-
   .MyBox__BigContainer
     %a.MyBox__BigContainer__MyMainBox{href: "#"}
 
@@ -35,51 +33,5 @@
                 1000円
               .MyBox__BigContainer__PostBox__lists__list__body__details__tax
                 (税金)
-        .MyBox__BigContainer__PostBox__lists__list
-          .MyBox__BigContainer__PostBox__lists__list__img
-            = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-          .MyBox__BigContainer__PostBox__lists__list__body
-            .MyBox__BigContainer__PostBox__lists__list__body__name
-              product 1
-            .MyBox__BigContainer__PostBox__lists__list__body__details
-              .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                1000円
-              .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                (税金)
-        .MyBox__BigContainer__PostBox__lists__list
-          .MyBox__BigContainer__PostBox__lists__list__img
-            = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-          .MyBox__BigContainer__PostBox__lists__list__body
-            .MyBox__BigContainer__PostBox__lists__list__body__name
-              product 1
-            .MyBox__BigContainer__PostBox__lists__list__body__details
-              .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                1000円
-              .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                (税金)
-        .MyBox__BigContainer__PostBox__lists__list
-          .MyBox__BigContainer__PostBox__lists__list__img
-            = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-          .MyBox__BigContainer__PostBox__lists__list__body
-            .MyBox__BigContainer__PostBox__lists__list__body__name
-              product 1
-            .MyBox__BigContainer__PostBox__lists__list__body__details
-              .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                1000円
-              .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                (税金)
-        .MyBox__BigContainer__PostBox__lists__list
-          .MyBox__BigContainer__PostBox__lists__list__img
-            = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-          .MyBox__BigContainer__PostBox__lists__list__body
-            .MyBox__BigContainer__PostBox__lists__list__body__name
-              product 1
-            .MyBox__BigContainer__PostBox__lists__list__body__details
-              .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                1000円
-              .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                (税金)
-
-
 
 = render partial: 'posts/Footer'

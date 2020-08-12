@@ -37,6 +37,17 @@
         overflow: hidden;
         margin: 0;
         z-index: auto;
+        .Products_img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          z-index: auto;
+          height: 150px;
+          object-fit: cover;
+        }
       }
       &__body{
         background-color: white;
@@ -67,14 +78,3 @@
   }
 }
 
-.Products_img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: auto;
-  height: 150px;
-  object-fit: cover;
-}

@@ -33,9 +33,6 @@
             .field
               = f.label :パスワード, class:"field__name"
               %span.Required 必須
-              - if @minimum_password_length
-                %em
-                  (#{@minimum_password_length} 文字以上)
               %br/
               = f.password_field :password, autocomplete: "new-password", class:"field__box", placeholder: "7文字以上の半角英数字"
             .field
