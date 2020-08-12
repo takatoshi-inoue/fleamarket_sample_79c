@@ -22,7 +22,7 @@
 |Column|Type|Option|
 |------|----|------|
 |postal_code|string|null: false|
-|prefectures|string|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |apartment|string||

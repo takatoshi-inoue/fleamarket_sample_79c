@@ -7,10 +7,10 @@
         新規会員登録
     
     .Main-sessions__line      
-      = link_to "#", class: 'Main-sessions__line__btn Main-sessions__line__btn--google' do
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'Main-sessions__line__btn Main-sessions__line__btn--google' do
         = icon("fab", "google", class: 'Main-sessions__line__btn--google__icon')
         Googleでログイン
-      = link_to "#", class: 'Main-sessions__line__btn Main-sessions__line__btn--facebook' do
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'Main-sessions__line__btn Main-sessions__line__btn--facebook' do
         = icon("fab", "facebook-square", class: 'Main-sessions__line__btn--facebook__icon')
         Facebookでログイン
       = link_to "#", class: 'Main-sessions__line__btn Main-sessions__line__btn--apple' do

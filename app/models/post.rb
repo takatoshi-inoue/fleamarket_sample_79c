@@ -11,8 +11,17 @@ class Post < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :comments
   accepts_nested_attributes_for :images, allow_destroy: true
-  
-  
+
+
+  def self.search(search)
+    if search
+      Post.where('name LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
+
+
   enum condition:{
      "選択してください":0,
      新品、未使用:1,

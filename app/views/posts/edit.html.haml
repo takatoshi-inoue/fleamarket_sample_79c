@@ -51,7 +51,6 @@
             %span.spanmessage 必須
           #category_field
             = f.collection_select :category_id, @parents, :id, :name, { include_blank: "---", selected:"" }, id: "category_form", class: "Post-Main__post-show__box1__select"
-            -# = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__post-show__box2
           .Post-Main__post-show__box2__text
             %label.labelmessage ブランド
@@ -62,7 +61,7 @@
             %label.labelmessage 商品の状態
             %span.spanmessage 必須
           = f.select :condition, Post.conditions.keys, {}, {class: "Post-Main__post-show__box3__select"}
-          -# = icon('fas', 'chevron-down', class: "items-btn")
+          = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__delivery
         %p.p3 配送について
         .Post-Main__delivery__box1
@@ -70,19 +69,19 @@
             %label.labelmessage 配送料の負担
             %span.spanmessage 必須
           = f.select :burden, Post.burdens.keys, {}, {class: "Post-Main__delivery__box1__select"}
-          -# = icon('fas', 'chevron-down', class: "items-btn")
+          = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__delivery__box2
           .Post-Main__delivery__box2__text
             %label.labelmessage 発送元の地域
             %span.spanmessage 必須
           = f.select :area, Post.areas.keys, {}, {class: "Post-Main__delivery__box2__select"}
-          -# = icon('fas', 'chevron-down', class: "items-btn")
+          = icon('fas', 'chevron-down', class: "items-btn")
         .Post-Main__delivery__box3
           .Post-Main__delivery__box3__text
             %label.labelmessage 発送までの日数
             %span.spanmessage 必須
           = f.select :day, Post.days.keys, {}, {class: "Post-Main__delivery__box3__select"}
-          -# = icon('fas', 'chevron-down', class: "items-btn")
+          = icon('fas', 'chevron-down', class: "items-btn")
       .Post-Main__price
         %p.p3 価格（¥300~9,999,999）
         .Post-Main__price__box1
@@ -99,7 +98,6 @@
           %p.p4 販売利益
           %p.p5 ー
       .Post-Main__btns
-        = f.submit "出品する", class:"Post-Main__btns__btn1"
-        = link_to("下書きに保存", root_path, {class: "Post-Main__btns__btn2"})
+        = f.submit "変更する", class:"Post-Main__btns__btn1"
         = link_to("もどる", root_path, {class: "Post-Main__btns__btn3"})
   = render 'SubFooter'
