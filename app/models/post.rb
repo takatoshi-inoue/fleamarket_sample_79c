@@ -9,7 +9,9 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :images, dependent: :destroy
+  has_many :comments
   accepts_nested_attributes_for :images, allow_destroy: true
+
 
   def self.search(search)
     if search
@@ -18,6 +20,7 @@ class Post < ApplicationRecord
       Post.all
     end
   end
+
 
   enum condition:{
      新品、未使用:0,

@@ -38,7 +38,11 @@ class PostsController < ApplicationController
   def show
     @user = @post.user
     @images = @post.images
+
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
     @category = @post.category
+
   end
 
 

@@ -23,6 +23,10 @@ class User < ApplicationRecord
   has_one :address, dependent: :destroy
   has_one :card, dependent: :destroy
   has_many :posts, dependent: :destroy
+
+  
+  has_many :comments
+
   has_many :sns_credentials
 
   def self.from_omniauth(auth)
@@ -40,6 +44,7 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
+
 
   enum birth_year:{
     "2020":0,"2019":1,"2018":2,"2017":3,"2016":4,"2015":5,"2014":6,"2013":7,"2012":8,"2011":9,"2010":10,
@@ -66,4 +71,5 @@ class User < ApplicationRecord
     "23":22, "24":23, "25":24, "26":25, "27":26, "28":27, "29":28, "30":29, "31":30
   },_suffix: true
   
+
 end
