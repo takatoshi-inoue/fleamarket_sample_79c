@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def search
+    @posts = Post.search(params[:keyword])
     #ajax通信を開始
     respond_to do |format|
       format.html
