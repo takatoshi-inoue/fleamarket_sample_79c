@@ -42,5 +42,9 @@ Rails.application.routes.draw do
       post 'pay', to: 'cards#pay'
     end
   end
+
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   
 end

@@ -114,14 +114,6 @@
                       %th.Show-Main__box__right__content__itemBox__tableBox__tbody__day__td 
                         = @post.day
 
-
-
-
-
-
-
-
-
           .Show-Main__box__right__links
           %ul.Show-Main__box__right__links
             = link_to "#",class:"Link__url" do
@@ -136,6 +128,37 @@
                   = icon('fas','angle-right')
                 .Show-Main__box__right__links__afterLink__text
                   %p 後ろの商品
+        
+
+
+
+        
+      .Show-Main__box__right__content__CommentContainer
+        .Show-Main__box__right__content__CommentContainer__CommentBox1
+          %h4 ↓お客様さからコメント↓
+        .Show-Main__box__right__content__CommentContainer__CommentBox__InCommentBox
+          - @comments.each do |comment|
+            .Show-Main__box__right__content__CommentContainer__CommentBox__InCommentBox__InComment
+              .Show-Main__box__right__content__CommentContainer__CommentBox__InCommentBox__InComment__CommentsBoxes
+                %img.Show-Main__box__right__content__CommentContainer__CommentBox__InCommentBox__imgIcon{alt: "", height: "40", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "40"}/
+                %br
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                
+              .Show-Main__box__right__content__CommentContainer__CommentBox__InCommentBox__InComment__InCommentUser
+                = comment.content
+          
+          .Show-Main__box__right__content__CommentContainer__CommentBox__CommentText
+          .Show-Main__box__right__content__CommentContainer__CommentBox__CommentName  
+            .Show-Main__box__right__content__CommentContainer__CommentBox__CommentName__IfCurrentUser
+              - if current_user
+                = form_with(model: [@post, @comment], local: true) do |form|
+                  = form.text_area :content, placeholder: "入力してください", rows: "2", class:"Show-Main__box__right__content__CommentContainer__CommentBox__IfCurrentUser__UserText"
+                  = form.submit "送信", class:"Show-Main__box__right__content__CommentContainer__CommentBox__IfCurrentUser__TextBtn"       
+              - else
+                %strong
+                  %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      
+
           .Show-Main__box__right__relatedItems
             .Show-Main__box__right__relatedItems__text
               %p= link_to 'ベビー・キッズをもっと見る', "#", class: "RelatedItems__text__url" 
