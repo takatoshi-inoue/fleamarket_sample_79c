@@ -1,10 +1,14 @@
 .MyBox{
-  margin: 40px auto 0;
-  width: 1020px;
-  height: 1342px;
+  // margin: 40px auto 0;
+  // width: 1020px;
+  // height: 1342px;
+  padding: 40px;
   display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
   &__side {
     list-style: none;
+    margin-bottom: 40px;
     
     &__Ul {
       border: 0;
@@ -23,6 +27,7 @@
           padding: 10px;
           border: 1px solid #f5f5f5;
           list-style: none;
+          background-color: white;
           
           &__linkBtn {
             text-decoration: none;
@@ -97,16 +102,17 @@
     }
   }
   &__BigContainer {
-    width: 700px;
-    height: 1027;
+    // width: 700px;
+    // height: 1027;
     padding: 20px;
+    padding-left: 100px;
     background: url(/jp/assets/img/mypage/user-bg.jpg?82578048);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     
     &__MyMainBox {
-      width: 700px;
+      // width: 700px;
       height: 200px;
       display: flex;
       flex-direction: column;
@@ -147,7 +153,7 @@
       }
     }
     &__PostBox {
-      width: 780px;
+      // width: 780px;
       &__PostBoxCenter {
         text-align: center;
       }
@@ -155,6 +161,8 @@
         display: flex;
         flex-wrap:wrap;
         align-content: stretch;
+        padding-left: 50px;
+        text-align: center;
 
 
         &__list {
@@ -162,10 +170,16 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          
+          margin: 0 20px 20px 0;
+          background-color: white;
         }
       }
     }
   } 
-
+  .Card-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

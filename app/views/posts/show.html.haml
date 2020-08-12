@@ -1,25 +1,8 @@
 = render 'Header'
 
-.Crumbs
-  .Crumbs__lists
-    .Crumbs__lists__categoryName
-      %p= link_to 'カテゴリー１', "#", class: "categoryName__url" 
-    .Crumbs__lists__img
-      =icon('fas','angle-right')
-    .Crumbs__lists__categoryName
-      %p= link_to 'カテゴリー２', "#", class: "categoryName__url" 
-    .Crumbs__lists__img
-      =icon('fas','angle-right')
-    .Crumbs__lists__categoryName
-      %p= link_to 'カテゴリー３', "#", class: "categoryName__url" 
-    .Crumbs__lists__img
-      =icon('fas','angle-right')
-    .Crumbs__lists__categoryName
-      %p= link_to 'カテゴリー４', "#", class: "categoryName__url" 
-    .Crumbs__lists__img
-      = icon('fas','angle-right')
-    .Crumbs__lists__categoryName
-      = @post.name
+- breadcrumb :postshow
+= render "layouts/breadcrumbs"
+
 .Show-Main 
   .Show-Main__box
     .Show-Main__box__left
