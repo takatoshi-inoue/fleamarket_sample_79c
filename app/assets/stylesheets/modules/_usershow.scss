@@ -1,7 +1,4 @@
 .MyBox{
-  // margin: 40px auto 0;
-  // width: 1020px;
-  // height: 1342px;
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -102,8 +99,6 @@
     }
   }
   &__BigContainer {
-    // width: 700px;
-    // height: 1027;
     padding: 20px;
     padding-left: 100px;
     background: url(/jp/assets/img/mypage/user-bg.jpg?82578048);
@@ -112,7 +107,6 @@
     position: relative;
     
     &__MyMainBox {
-      // width: 700px;
       height: 200px;
       display: flex;
       flex-direction: column;
@@ -153,7 +147,6 @@
       }
     }
     &__PostBox {
-      // width: 780px;
       &__PostBoxCenter {
         text-align: center;
       }
