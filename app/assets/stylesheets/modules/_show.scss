@@ -36,13 +36,14 @@
       width: 700px;
       margin: 0 auto;
       height: 2080px;
+      overflow: scroll;
       &__content{
         height: 1360px;
         margin: 0;
         padding: 0;
         &__itemBox{ 
           background-color:#fff;
-          height: 1260px;
+          height: 1360px;
           padding: 24px 40px 40px;
           &__name{
             text-align: center;
@@ -271,9 +272,105 @@
               }
             }
           }
+        }
+        &__ComentContainer {
+          width: 700px;
+          height: 100px;
+          margin-top: 20px;
+
+          &__ComentBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            &__ComentUser {
+              margin: 10px 0 20px 20px;
+            }
+            &__ComentUpdate {
+            
+
+            }
+          }
+
+          &__ComentContainerBtn {
+            display: flex;
+            flex-direction: column;
+            &__TextBoxC {
+
+            }
+            &__BtnBoxC {
+              text-align: center;
+              
+              width: 100%;
+              text-align: center;
+              &__BtnComent {
+            
+              }
+            }
+          }
+        }
+
+
+        &__CommentContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           
+          &__CommentBox {
+            
+            &__InCommentBox {
+              
+              &__InComment {
+                display: flex;
+                margin-bottom: 15px;
+                &__CommentsBoxes {
+                  margin-right: 15px;
+                  width: 80px;
+                  &__InCommentUser {
+                    
+                    &__imgIcon {
+
+                    }
+                  }   
+                }
+                &__InCommentUser {
+                  background-color: #fff;
+                  width: 600px;
+                  border-radius: 15px;
+                  padding: 5px 5px 5px 15px;
+                }
+              }
+              
+              &__InComment {
+                
+              }
+            }
+
+            &__CommentText {
+              margin-top: 20px;
+              
+            }  
+            &__CommentName {
+              
+              &__IfCurrentUser {
+                
+                &__UserText {
+                  width: 100%;
+                  
+                }
+                &__TextBtn {
+                  width: 100%;
+                }
+              }
+            }
+              
+
+          }
         }
       }
+
+
+
       &__brank{
         height: 60px;
       }
@@ -345,9 +442,9 @@
 
 .table{
   width: 100%;
-    height: 375px;
-    border-collapse: collapse;
-    border: 1px solid #f8f8f8;
+  height: 375px;
+  border-collapse: collapse;
+  border: 1px solid #f8f8f8;
 }
 
 .Link__url{
@@ -433,4 +530,22 @@
   font-weight: 600;
   margin-bottom: 16px;
   transition: all ease-out .3s;
+}
+
+
+
+.Show-Main__box__right__content__CommentContainer__CommentBox__IfCurrentUser__UserText {
+  width: 680px;
+  height: 50px;
+  border-radius: 15px;
+  padding: 5px 5px 5px 5px;
+}
+.Show-Main__box__right__content__CommentContainer__CommentBox__IfCurrentUser__TextBtn {
+  width: 680px;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 15px;
 }

@@ -38,6 +38,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @images = @post.images
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def destroy
