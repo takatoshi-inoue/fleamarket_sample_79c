@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_085150) do
+ActiveRecord::Schema.define(version: 2020_08_12_113416) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2020_08_10_085150) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_images_on_post_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -107,6 +116,8 @@ ActiveRecord::Schema.define(version: 2020_08_10_085150) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "posts"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
   add_foreign_key "sns_credentials", "users"
