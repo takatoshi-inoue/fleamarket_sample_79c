@@ -550,3 +550,28 @@
   margin-top: 10px;
   border-radius: 15px;
 }
+
+.Show-Main__box__right__content__CommentContainer__CommentBox__CommentName__IfCurrentUser {
+  // text-align: center;
+}
+
+.items-box_photo__buy{
+  width: 0;
+  height: 0;
+  border-top: 70px solid #ea352d ;
+  border-right: 65px solid transparent;
+  border-bottom: 65px solid transparent;
+  border-left: 60px solid #ea352d ;
+  z-index:100;
+  position: absolute;
+  top:-75px;
+  left: -45px;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 28px;
+    margin:-35px 0px 0px -55px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+}  
