@@ -1,6 +1,6 @@
 = render partial: 'posts/Header'
 
-- breadcrumb :mypage
+- breadcrumb :like
 = render "layouts/breadcrumbs"
 
 .MyBox
@@ -25,7 +25,7 @@
       .MyBox__BigContainer__PostBox__PostBoxCenter
         お気に入りした商品
       .MyBox__BigContainer__PostBox__lists
-        - @posts.each do |post|
+        - current_user.liked_posts.each do |post|
           .MyBox__BigContainer__PostBox__lists__list
             .MyBox__BigContainer__PostBox__lists__list__img
               - post.images.each do |image|
@@ -43,29 +43,5 @@
               .items-box_photo__sold
                 .items-box_photo__sold__inner
                   SOLD
-
-        -# .MyBox__BigContainer__PostBox__lists__list
-        -#   .MyBox__BigContainer__PostBox__lists__list__img
-        -#     = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-        -#   .MyBox__BigContainer__PostBox__lists__list__body
-        -#     .MyBox__BigContainer__PostBox__lists__list__body__name
-        -#       product 1
-        -#     .MyBox__BigContainer__PostBox__lists__list__body__details
-        -#       .MyBox__BigContainer__PostBox__lists__list__body__details__money
-        -#         1000円
-        -#       .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-        -#         (税金)
-
-        -# .MyBox__BigContainer__PostBox__lists__list
-        -#   .MyBox__BigContainer__PostBox__lists__list__img
-        -#     = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-        -#   .MyBox__BigContainer__PostBox__lists__list__body
-        -#     .MyBox__BigContainer__PostBox__lists__list__body__name
-        -#       product 1
-        -#     .MyBox__BigContainer__PostBox__lists__list__body__details
-        -#       .MyBox__BigContainer__PostBox__lists__list__body__details__money
-        -#         1000円
-        -#       .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-        -#         (税金)
 
 = render partial: 'posts/Footer'

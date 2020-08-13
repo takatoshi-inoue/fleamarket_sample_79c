@@ -11,6 +11,11 @@ crumb :card do
   parent :mypage
 end
 
+crumb :like do
+  link "お気に入り一覧", likes_users_path(current_user)
+  parent :mypage
+end
+
 crumb :postshow do
   link "商品の詳細"
 end
