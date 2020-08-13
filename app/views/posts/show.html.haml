@@ -43,7 +43,7 @@
                   -if @post.buyer_id.present? 
                     %p= "売り切れ"
                   - elsif user_signed_in?  && current_user.id == @post.user_id 
-                           
+      
                   -else
                     %p 購入にはログインとカード登録が必要です。
 
