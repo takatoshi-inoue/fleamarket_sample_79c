@@ -36,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @user = @post.user
     @user = User.find(@post.user_id)
     @images = @post.images
     @comment = Comment.new

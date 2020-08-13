@@ -1,21 +1,3 @@
-
-
--# %h2 
--#   いいね件数: 
--#   = @post.likes.count
--#   - if current_user.already_liked?(@post)
--#     #like-destroy
--#       = link_to post_like_path(@post), method: :delete, remote: true do
--#         = icon('fas', 'thumbs-up', class: "favorite-icon-color", id: "color")
--#         .FavoriteRank__favorite__message
--#           いいねを取り消す
--#   - else
--#     #like-create
--#       = link_to post_likes_path(@post), method: :post, remote: true do
--#         = icon('fas', 'thumbs-up', class: "favorite-icon-normal", id: "normal")
--#         .FavoriteRank__favorite__message
--#           いいね
-
 .FavoriteRank
   .FavoriteRank__favorite
     %h2 
