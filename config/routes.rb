@@ -16,16 +16,13 @@ Rails.application.routes.draw do
 
   root 'posts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  
   resources :posts do
     collection do
       get :search
     end
-  end
-  
-  resources :posts, only: [:new,:create,:show,:destroy,:edit,:update] do
     resources :comments, only: [:create]
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:index, :create, :destroy]
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'
