@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   end
   
   resources :posts, only: [:new,:create,:show,:destroy,:edit,:update] do
+    resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'
@@ -42,9 +44,4 @@ Rails.application.routes.draw do
       post 'pay', to: 'cards#pay'
     end
   end
-
-  resources :posts do
-    resources :comments, only: [:create]
-  end
-  
 end
