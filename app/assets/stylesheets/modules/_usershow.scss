@@ -167,6 +167,15 @@
           align-items: center;
           margin: 0 20px 20px 0;
           background-color: white;
+
+          &__img {
+            width: 150px;
+            height: 150px;
+            img {
+              width: 150px;
+              height: 150px;
+            }
+          }
         }
       }
     }

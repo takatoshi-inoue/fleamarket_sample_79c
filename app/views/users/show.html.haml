@@ -10,7 +10,7 @@
       .MyBox__BigContainer__MyMainBox__MyContainer
         %img.MyBox__BigContainer__MyMainBox__MyContainer__imgIcon{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
       %h2.MyBox__BigContainer__MyMainBox__MyContainer__Profile
-        名前
+        = current_user.nickname
       .MyBox__BigContainer__MyMainBox__MyContainer__CountBox
         .MyBox__BigContainer__MyMainBox__MyContainer__CountBox__Evaluation
           評価
@@ -24,23 +24,19 @@
       .MyBox__BigContainer__PostBox__PostBoxCenter
         出品した商品
       .MyBox__BigContainer__PostBox__lists
-        .MyBox__BigContainer__PostBox__lists__list
-          
-          .MyBox__BigContainer__PostBox__lists__list__img
-            
-            -# = link_to image_tag @posts.first.images.first.name.url
-
-            -# = link_to image_tag("Product.jpg", class:"Products_img"), "/"
-          .MyBox__BigContainer__PostBox__lists__list__body
-            .MyBox__BigContainer__PostBox__lists__list__body__name
-              product 1
-            .MyBox__BigContainer__PostBox__lists__list__body__details
-              .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                1000円
-              .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                (税金)
-
-  
-  
+        - @posts.each do |post|
+          .MyBox__BigContainer__PostBox__lists__list
+            .MyBox__BigContainer__PostBox__lists__list__img
+              = image_tag post.images.first.name.url
+            .MyBox__BigContainer__PostBox__lists__list__body
+              .MyBox__BigContainer__PostBox__lists__list__body__name
+                = post.name
+              .MyBox__BigContainer__PostBox__lists__list__body__details
+                .MyBox__BigContainer__PostBox__lists__list__body__details__money
+                  = post.price
+                  円
+                .MyBox__BigContainer__PostBox__lists__list__body__details__tax
+                  (税金)
 
 = render partial: 'posts/Footer'
+
