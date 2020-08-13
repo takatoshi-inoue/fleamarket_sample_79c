@@ -5,17 +5,45 @@
 
 .MyBox
   = render partial: 'users/sidebar'
-  .Card-box
-    クレジットカード情報
-    .form-content
-      %br
-      = "**** **** **** " + @default_card_information.last4
-      %br
-      - exp_month = @default_card_information.exp_month.to_s
-      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-      = exp_month + " / " + exp_year
-      = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
-        %input{ type: "hidden", name: "card_id", value: "" }
-        %button.delete-btn 削除する
+  .CardsRegister
+    %h2.CardsRegister__CardsBox
+      クレジットカード情報の削除
+    .CardsRegister__CardsBox__FormTag
+      = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        .CardsRegister__CardsBox__FormTag__NumberBox
+          .CardsRegister__CardsBox__FormTag__NumberBox__NumberBox1
+              
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+          .MyBox__Card-box__Information
+        
+      .CardsRegister__CardsBox__FormTag__TextBox
+        %br
+      
+      .CardsRegister__CardsBox__FormTag__Securite      
+        = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do 
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button.delete-btn 削除する
 
+
+
+  
 = render partial: 'posts/Footer'
+
+-# .CardDeleteBox
+-#   %h2.CardDeleteBox__CardDeleteBoxCenter
+-#     クレジットカード情報
+-#   .CardDeleteBox__CardDeleteBoxInformation
+-#     %br
+-#     = "**** **** **** " 
+-#   .CardDeleteBox__Exp_month
+-#     %br
+-#     1/20
+-#     %br
+-#   .CardDeleteBox__DeleteBtn
+-#     = submit_tag "削除する", id: "token_submit"]
+
