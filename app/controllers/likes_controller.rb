@@ -1,12 +1,13 @@
 class LikesController < ApplicationController
   before_action :set_post, only: [:create, :destroy]
 
-  def index
-    # post.likes.find_by(user_id: current_user.id)
-  end
+  # def index
+  #   # post.likes.find_by(user_id: current_user.id)
+  # end
 
   def create
     @like = current_user.likes.create(post_id: params[:post_id])
+    @current_like = @like
     # redirect_to post_path(@post)
   end
 

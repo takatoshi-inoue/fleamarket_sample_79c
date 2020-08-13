@@ -36,12 +36,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = @post.user
+    # @user = @post.user
+    @user = User.find(@post.user_id)
     @images = @post.images
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     @category = @post.category
     @like = Like.new
+    @current_like = @post.likes.where(user_id: current_user.id).first
   end
 
 

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       get :search
     end
     resources :comments, only: [:create]
-    resources :likes, only: [:index, :create, :destroy]
+    resources :likes, only: [:create, :destroy]
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'
@@ -34,7 +34,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get :likes
+    end
+  end
 
   resources :cards, only: [:new, :show, :destroy] do
     collection do
