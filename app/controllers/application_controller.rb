@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth, if: :production?
+  before_action :basic_auth, if: :production? 
+  before_action :set_search
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -12,6 +13,11 @@ class ApplicationController < ActionController::Base
 
   def production?
     Rails.env.production?
+  end
+
+  def set_search
+    @search = Post.ransack(params[:q])
+    @results  = @search.result
   end
 
   def basic_auth
