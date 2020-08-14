@@ -11,6 +11,8 @@ class Post < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :comments
   accepts_nested_attributes_for :images, allow_destroy: true
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
 
   def self.search(search)

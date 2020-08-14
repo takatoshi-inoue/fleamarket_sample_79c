@@ -1,0 +1,19 @@
+.FavoriteRank
+  .FavoriteRank__favorite
+    %h2 
+      お気に入り件数: 
+      = @post.likes.count
+      - if !user_signed_in?
+        %h5 お気に入り機能使用には
+        %h6 新規登録/ログインが必要です  
+
+      - elsif current_user.already_liked?(@post)
+        = link_to post_like_path(@post.id, @current_like.id), method: :delete, remote: true do
+          = icon('fas', 'thumbs-up', class: "favorite-icon-color", id: "color")
+        .FavoriteRank__favorite__message
+          お気に入りを取り消す
+      - else
+        = link_to post_likes_path(@post.id), method: :post, remote: true do
+          = icon('fas', 'thumbs-up', class: "favorite-icon-normal", id: "normal")
+        .FavoriteRank__favorite__message
+          お気に入り

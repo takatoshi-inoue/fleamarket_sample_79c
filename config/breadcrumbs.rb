@@ -3,11 +3,16 @@ crumb :root do
 end
 
 crumb :mypage do
-  link "マイページ", user_path
+  link "マイページ", user_path(current_user)
 end
 
 crumb :card do
   link "クレジットカード情報", new_card_path
+  parent :mypage
+end
+
+crumb :like do
+  link "お気に入り一覧", likes_users_path(current_user)
   parent :mypage
 end
 
