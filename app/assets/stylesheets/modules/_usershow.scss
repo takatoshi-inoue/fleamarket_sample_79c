@@ -158,6 +158,7 @@
         align-content: stretch;
         padding-left: 50px;
         text-align: center;
+        margin-top: 30px;
 
 
         &__list {
@@ -169,22 +170,22 @@
           background-color: white;
           width: 260px;
           height: 270px;
+
+          &__url {
+            text-decoration: none;
+            color: black;
+          }
           
           &__img{
-            width: 220px;
-            height: 150px;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            z-index: auto;
-            
-            
 
             img{
               width: 100%;
               height: 150px;
               object-fit: cover;
             }
+          }
+          &__body {
+            margin: 15px;
           }
         }
       }

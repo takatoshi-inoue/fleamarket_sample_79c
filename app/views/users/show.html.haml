@@ -26,17 +26,23 @@
       .MyBox__BigContainer__PostBox__lists
         - @posts.each do |post|
           .MyBox__BigContainer__PostBox__lists__list
-            .MyBox__BigContainer__PostBox__lists__list__img
-              = image_tag post.images.first.name.url
-            .MyBox__BigContainer__PostBox__lists__list__body
-              .MyBox__BigContainer__PostBox__lists__list__body__name
-                = post.name
-              .MyBox__BigContainer__PostBox__lists__list__body__details
-                .MyBox__BigContainer__PostBox__lists__list__body__details__money
-                  = post.price
-                  円
-                .MyBox__BigContainer__PostBox__lists__list__body__details__tax
-                  (税金)
+            = link_to post_path(post), class:"MyBox__BigContainer__PostBox__lists__list__url" do
+              .MyBox__BigContainer__PostBox__lists__list__img
+                = image_tag post.images.first.name.url, width: "600", height: '600', class: "Products_img"
+
+              .MyBox__BigContainer__PostBox__lists__list__body
+                .MyBox__BigContainer__PostBox__lists__list__body__name
+                  = post.name
+                .MyBox__BigContainer__PostBox__lists__list__body__details
+                  .MyBox__BigContainer__PostBox__lists__list__body__details__money
+                    = post.price
+                    円
+                  .MyBox__BigContainer__PostBox__lists__list__body__details__tax
+                    (税金)
+              -if post.buyer_id.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
 
 = render partial: 'posts/Footer'
 

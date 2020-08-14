@@ -104,20 +104,20 @@
                 = image_tag post.images.first.name.url, width: "600", height: '600', class: "Products_img"
                 
 
-            .Main__pickupContainer__productbox__lists__list__body
-              
-              .Main__pickupContainer__productbox__lists__list__body__name
-                = post.name
-              .Main__pickupContainer__productbox__lists__list__body__details
-                .Main__pickupContainer__productbox__lists__list__body__details__money
-                  = post.price
-                  円
-                .Main__pickupContainer__productbox__lists__list__body__details__tax
-                  (税金)
-            -if post.buyer_id.present? 
-              .items-box_photo__sold
-                .items-box_photo__sold__inner
-                  SOLD
+              .Main__pickupContainer__productbox__lists__list__body
+                
+                .Main__pickupContainer__productbox__lists__list__body__name
+                  = post.name
+                .Main__pickupContainer__productbox__lists__list__body__details
+                  .Main__pickupContainer__productbox__lists__list__body__details__money
+                    = post.price
+                    円
+                  .Main__pickupContainer__productbox__lists__list__body__details__tax
+                    (税金)
+              -if post.buyer_id.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
 
   .Main__pickupContainer
     .Main__pickupContainer__head

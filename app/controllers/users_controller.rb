@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end  
 
   def likes
+    @posts = current_user.posts.order('created_at DESC')
   end
 end
 
