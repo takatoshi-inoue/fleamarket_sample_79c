@@ -29,8 +29,7 @@
           .MyBox__BigContainer__PostBox__lists__list
             = link_to post_path(post), class:"MyBox__BigContainer__PostBox__lists__list__url" do
               .MyBox__BigContainer__PostBox__lists__list__img
-                - post.images.each do |image|
-                  = image_tag image.name.url, class:"Products_img"
+                = image_tag post.images.first.name.url, width: "600", height: '600', class: "Products_img"
 
               .MyBox__BigContainer__PostBox__lists__list__body
                 .MyBox__BigContainer__PostBox__lists__list__body__name
