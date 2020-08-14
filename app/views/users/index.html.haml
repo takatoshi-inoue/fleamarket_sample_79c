@@ -1,0 +1,52 @@
+= render partial: 'posts/Header'
+
+- breadcrumb :like
+= render "layouts/breadcrumbs"
+
+.MyBox
+  = render 'sidebar'
+  .MyBox__BigContainer
+    %a.MyBox__BigContainer__MyMainBox{href: "#"}
+
+      .MyBox__BigContainer__MyMainBox__MyContainer
+        %img.MyBox__BigContainer__MyMainBox__MyContainer__imgIcon{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
+      %h2.MyBox__BigContainer__MyMainBox__MyContainer__Profile
+        = current_user.nickname
+      .MyBox__BigContainer__MyMainBox__MyContainer__CountBox
+        .MyBox__BigContainer__MyMainBox__MyContainer__CountBox__Evaluation
+          評価
+          %span.MyBox__BigContainer__MyMainBox__MyContainer__CountBox__Evaluation__EvaluationContainer
+            0
+        .MyBox__MyMainBox__BigContainer__MyContainer__CountBox__sell
+          出品数
+          %span.MyBox__BigContainer__MyMainBox__MyContainer__CountBox__sell__sellcontainer
+            0
+    .MyBox__BigContainer__PostBox
+      .MyBox__BigContainer__PostBox__PostBoxCenter
+        購入した商品
+      .MyBox__BigContainer__PostBox__lists
+        - @posts.each do |post|
+          -if post.buyer_id.present? 
+            -if post.buyer_id == current_user.id
+              .MyBox__BigContainer__PostBox__lists__list
+                = link_to post_path(post), class:"MyBox__BigContainer__PostBox__lists__list__url" do
+                  .MyBox__BigContainer__PostBox__lists__list__img
+                    - post.images.each do |image|
+                      = image_tag image.name.url, class:"Products_img"
+
+                  .MyBox__BigContainer__PostBox__lists__list__body
+                    .MyBox__BigContainer__PostBox__lists__list__body__name
+                      = post.name
+                    .MyBox__BigContainer__PostBox__lists__list__body__details
+                      .MyBox__BigContainer__PostBox__lists__list__body__details__money
+                        = post.price
+                      .MyBox__BigContainer__PostBox__lists__list__body__details__tax
+                        (税金)
+                  -if post.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
+          - else
+            
+            
+= render partial: 'posts/Footer'

@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index,:show] do
     collection do
       get :likes
     end

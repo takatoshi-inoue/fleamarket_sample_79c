@@ -24,7 +24,7 @@
       .MyBox__BigContainer__PostBox__PostBoxCenter
         出品した商品
       .MyBox__BigContainer__PostBox__lists
-        - @posts.each do |post|
+        - current_user.posts.each do |post|
           .MyBox__BigContainer__PostBox__lists__list
             = link_to post_path(post), class:"MyBox__BigContainer__PostBox__lists__list__url" do
               .MyBox__BigContainer__PostBox__lists__list__img
