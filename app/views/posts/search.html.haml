@@ -4,54 +4,48 @@
   .contents__side
     = form_with model: @post, local: true do |f|
       .contents__side__box
-        %p.p3 商品の詳細
-        .Post-Main__post-show__box1
-          .Post-Main__post-show__box1__text
+        %p.p3 詳細検索
+        .contents__side__box__box0
+          .contents__side__box__box0__text
+            %label.labelmessage キーワードから探す
+            = f.text_field :brand , class:"contents__side__box__box0__form"
+        .contents__side__box__box1
+          .contents__side__box__box1__text
             %label.labelmessage カテゴリー
-            %span.spanmessage 必須
           #category_field
-            -# = f.collection_select :category_id, @parents, :id, :name, { include_blank: "---", selected:"" }, id: "category_form", class: "Post-Main__post-show__box1__select"
+            -# = f.collection_select :category_id, @parents, :id, :name, { include_blank: "---", selected:"" }, id: "category_form", class: "contents__side__box__box1__select"
             -# = icon('fas', 'chevron-down', class: "items-btn")
-        .Post-Main__post-show__box2
-          .Post-Main__post-show__box2__text
+        .contents__side__box__box2
+          .contents__side__box__box2__text
             %label.labelmessage ブランド
-            %span.sub 任意
-          = f.text_field :brand, placeholder: "例) シャネル" , class:"Post-Main__post-show__box2__form"
-        .Post-Main__post-show__box3
-          .Post-Main__post-show__box3__text
+          = f.text_field :brand, placeholder: "例) シャネル" , class:"contents__side__box__box2__form"
+        .contents__side__box__box3
+          .contents__side__box__box3__text
             %label.labelmessage 商品の状態
-            %span.spanmessage 必須
-          = f.select :condition, Post.conditions.keys,{include_blank: "選択してください", selected:""}, {class: "Post-Main__post-show__box3__select"}
+          = f.select :condition, Post.conditions.keys,{include_blank: "選択してください", selected:""}, {class: "contents__side__box__box3__select"}
           = icon('fas', 'chevron-down', class: "items-btn")
-      .Post-Main__delivery
-        %p.p3 配送について
-        .Post-Main__delivery__box1
-          .Post-Main__delivery__box1__text
+      .contents__side__delivery
+        .contents__side__delivery__box1
+          .contents__side__delivery__box1__text
             %label.labelmessage 配送料の負担
-            %span.spanmessage 必須
-          = f.select :burden, Post.burdens.keys, {include_blank: "選択してください", selected:""}, {class: "Post-Main__delivery__box1__select"}
+          = f.select :burden, Post.burdens.keys, {include_blank: "選択してください", selected:""}, {class: "contents__side__delivery__box1__select"}
           = icon('fas', 'chevron-down', class: "items-btn")
-        .Post-Main__delivery__box2
-          .Post-Main__delivery__box2__text
-            %label.labelmessage 発送元の地域
-            %span.spanmessage 必須
-          = f.select :area, Post.areas.keys, {include_blank: "選択してください", selected:""}, {class: "Post-Main__delivery__box2__select"}
+        .contents__side__delivery__box2
+          .contents__side__delivery__box2__text
+            %label.labelmessage 販売状況
+          = f.select :day, Post.days.keys, {include_blank: "選択してください", selected:""}, {class: "contents__side__delivery__box2__select"}
           = icon('fas', 'chevron-down', class: "items-btn")
-        .Post-Main__delivery__box3
-          .Post-Main__delivery__box3__text
-            %label.labelmessage 発送までの日数
-            %span.spanmessage 必須
-          = f.select :day, Post.days.keys, {include_blank: "選択してください", selected:""}, {class: "Post-Main__delivery__box3__select"}
-          = icon('fas', 'chevron-down', class: "items-btn")
-      .Post-Main__price
-        %p.p3 価格（¥300~9,999,999）
-        .Post-Main__price__box1
-          .Post-Main__price__box1__text
-            %label.labelmessage 販売価格
-            %span.spanmessage 必須
-          .Post-Main__price__box1__forms
+      .contents__side__price
+        .contents__side__price__box1
+          .contents__side__price__box1__text
+            %p.labelmessage 販売価格
+          .contents__side__price__box1__forms
             %span.money ¥
             = f.text_field :price, placeholder: "0" , class:"Post-Main__price__box1__forms__form"
+      .contents__side__search
+        = search_form_for @search,url: search_posts_path do |search|
+          .contents__side__search__btns
+            = search.submit "完了", class:"contents__side__search__btns__btn1"
 
 
 
