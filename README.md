@@ -1,4 +1,5 @@
 # fleamarket_sample_79c DB設計
+
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
